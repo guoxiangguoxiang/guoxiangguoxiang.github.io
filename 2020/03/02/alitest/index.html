@@ -15,18 +15,23 @@
 
 
 
-<meta name="description" content="选择题数：1   编程题数：1">
+<meta name="description" content="选择题：10        编程题：9        概述题：1        开放题：1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云达摩院实习笔试题">
 <meta property="og:url" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/index.html">
 <meta property="og:site_name" content="zhanzhan&#39;s blog">
-<meta property="og:description" content="选择题数：1   编程题数：1">
+<meta property="og:description" content="选择题：10        编程题：9        概述题：1        开放题：1">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/bian7.png">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/bian8.png">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/gai1.png">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/gai12.png">
 <meta property="article:published_time" content="2020-03-02T13:31:32.634Z">
-<meta property="article:modified_time" content="2020-03-02T14:15:00.850Z">
+<meta property="article:modified_time" content="2020-03-02T16:50:09.830Z">
 <meta property="article:author" content="zhanzhan">
 <meta property="article:tag" content="阿里云">
 <meta property="article:tag" content="实习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/bian7.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -306,47 +311,98 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong>选择题数</strong>：1   <strong>编程题数</strong>：1</p>
+        <p><strong>选择题：</strong>10        <strong>编程题：</strong>9        <strong>概述题：</strong>1        <strong>开放题：</strong>1</p>
 <a id="more"></a>
+<h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a><strong>选择题</strong></h2><p><strong>1.题目描述：</strong>选出以下正确项：</p>
+<p>​    <strong>题目答案：</strong>BCD</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Pencil = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> redPencil = <span class="keyword">new</span> Pencil();</span><br><span class="line"></span><br><span class="line">A. Pencil.__proto__.constructor === Pencil</span><br><span class="line">B. redPencil.__proto__.constructor === Pencil</span><br><span class="line">C. redPencil.__proto__.__proto__ === <span class="built_in">Object</span>.prototype</span><br><span class="line">D. redPencil.__proto__.__proto__ === <span class="built_in">Function</span>.__proto__.__proto__</span><br></pre></td></tr></table></figure>
 
-<h2 id="选择题1"><a href="#选择题1" class="headerlink" title="####选择题1####"></a>####选择题1####</h2><p>选出以下正确项：BCD<br>const Pencil = function() {};<br>const redPencil = new Pencil();</p>
-<ol>
-<li>Pencil.<strong>proto</strong>.constructor === Pencil</li>
-<li>redPencil.<strong>proto</strong>.constructor === Pencil</li>
-<li>redPencil.<strong>proto</strong>.<strong>proto</strong> === Object.prototype</li>
-<li>redPencil.<strong>proto</strong>.<strong>proto</strong> === Function.<strong>proto</strong>.<strong>proto</strong></li>
-</ol>
-<h2 id="解析"><a href="#解析" class="headerlink" title="####解析####"></a>####解析####</h2><p>选出以下正确项：<br>const Pencil = function() {};<br>const redPencil = new Pencil();</p>
-<ol>
-<li>Pencil.<strong>proto</strong>.constructor === Pencil</li>
-<li>redPencil.<strong>proto</strong>.constructor === Pencil</li>
-<li>redPencil.<strong>proto</strong>.<strong>proto</strong> === Object.prototype</li>
-<li>redPencil.<strong>proto</strong>.<strong>proto</strong> === Function.<strong>proto</strong>.<strong>proto</strong></li>
-</ol>
-<h2 id="编程题1"><a href="#编程题1" class="headerlink" title="####编程题1####"></a>####编程题1####</h2><p>实现可以反转字符串的函数方法。</p>
-<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="####解析####"></a>####解析####</h2><p>​<code>split(&#39;&#39;).reverse().join(&#39;&#39;)
-​</code></p>
-<h2 id="编程题2"><a href="#编程题2" class="headerlink" title="####编程题2####"></a>####编程题2####</h2><p>实现可以撤销的 Promise 方法。</p>
-<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="####解析####"></a>####解析####</h2><p>​<code>function createCancelablePromise(promise){
-    let isCanceled = false;
-    const cancelablePromise = new Promise((resolve,reject)=&gt;{
-        promise
-        .then((value)=&gt;{
-            isCanceled ? reject({isCanceled: true}) : resolve(value);
-        })
-        .catch((error)=&gt;{
-            isCanceled ? reject({isCanceled: true}) : reject(error);
-        });
-    });
-    return {
-        promise: cancelablePromise,
-        cancel(){
-            isCanceled = true;
-        }
-    };
-}
-export default createCancelablePromise;
-​</code></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>2.题目描述：</strong>对于解构以下说法错误的是：</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. 不完全解构，也会成功，不会报错</span><br><span class="line">B. 只要支持 Iterator 接口，都可以被解构赋值</span><br><span class="line">C. null 可以替代默认值，而成功的解构赋值</span><br><span class="line">D. 解构中不定参数可以出现在除第一个以外的其他位置</span><br><span class="line">E. 解构是先找到同名属性，然后再赋给对应的变量</span><br><span class="line">F. 默认值可以引用解构赋值的其他变量，但该变量必须已经声明</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>3.题目描述：</strong>以下关于异步的说法正确的是：</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. 在JavaScript中，任务被分为两种，一种宏任务（MacroTask），一种叫微任务（MicroTask），setTimeout 属于微任务</span><br><span class="line">B. setTimeout(func, <span class="number">500</span>) 会精确的在 <span class="number">500</span>ms 后执行 func</span><br><span class="line">C. Promise、generator、<span class="keyword">async</span>/<span class="keyword">await</span> 都是异步解决方案</span><br><span class="line">D. process.nextTick、<span class="built_in">Promise</span> 都属于 node 中的微队列</span><br><span class="line">E. 浏览器的 Event Loop 和 node 的 Event Loop 是不同的，实现机制也不一样</span><br><span class="line">F. 在 node 中setTimeout 和 setImmediate 执行阶段是一致的</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>4.题目描述：</strong>关于浏览器网络知识，以下说法正确的是（不定选型）</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. JSONP/CORS 支持使用 GET/POST/PUT/DELETE 请求方式实现跨域</span><br><span class="line">B. 现代浏览器支持使用 Fetch/XMLHttpRequest 两种方式发送 Ajax 请求</span><br><span class="line">C. HTTP <span class="number">500</span> 代表用户传入的参数错误，禁止访问</span><br><span class="line">D. HTTP 协议在OSI七层模型中属于会话层，用于实现两台主机间的通信</span><br><span class="line">E. WebSocket 有同源限制，因此会有跨域的问题</span><br><span class="line">F. 使用 Gzip 方式，可以有效压缩响应的体积</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>5.题目描述：</strong>关于Promise的说法, 下述正确的是（不定选型）</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. Promise.resolve 返回一个 <span class="built_in">Promise</span> 并把状态置为 fullfilled</span><br><span class="line">B. Promise.reject 返回一个 <span class="built_in">Promise</span> 并把状态置为 rejected</span><br><span class="line">C. Promise.all 中如果当前数组中所有的<span class="built_in">Promise</span>的状态置为 fullfilled 或 rejected, 自己的状态即置为 fullfilled</span><br><span class="line">D. Promise.race 中如果当前数组中率先改变状态的 <span class="built_in">Promise</span> 为 fullfilled, 则自己的状态即置为 fullfilled</span><br><span class="line">E. Promise.all 中数组项必须为 <span class="built_in">Promise</span></span><br><span class="line">F. Promise.race 中数组项必须为 <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>6.题目描述：</strong>关于 es6 编程，以下说法正确的是</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. 不要使用 <span class="keyword">var</span>，建议优先使用 <span class="keyword">let</span></span><br><span class="line">B. [a, b] = [b, a]; 可以用于变量交换</span><br><span class="line">C. &#123; ...x &#125; 相当于对 x 做 <span class="keyword">for</span> <span class="keyword">in</span> 操作， [ ...x ] 相当于对 x 做 <span class="keyword">for</span> <span class="keyword">of</span> 操作</span><br><span class="line">D. 尽可能地使用箭头函数代替 .bind/_self/that 等针对 <span class="keyword">this</span> 的操作</span><br><span class="line">E. 严格模式下，不可使用 func.arguments 与 func.caller 属性</span><br><span class="line">F. Symbol 仅为了消除 “魔术字符串“</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>7.题目描述：</strong>以下关于CSS选择器说法错误的是：</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. 类选择器优先级高于标签选择器</span><br><span class="line">B. a[title~=foo]是写法正确的选择器</span><br><span class="line">C.  页面仅定义了p &#123; font-size: <span class="number">20</span>px; &#125;，那么p &gt; a字号也是<span class="number">20</span>px</span><br><span class="line">D. h1 + p可用于匹配h1和p元素</span><br><span class="line">E. button#large优先级高于button.large</span><br><span class="line">F. div ~ p:first-child是写法正确的选择器</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>8.题目描述：</strong>以下选项正确的是：</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A: setTimeout 两次执行之间的间隔大于等于指定的时间，setInterval 两次执行之间的间隔会小于setInterval指定的时间。</span><br><span class="line">B: requestAnimationFrame 总是与浏览器屏幕的刷新次数匹配，大多数屏幕的刷新频率是 <span class="number">60</span>HZ，对应大约 <span class="number">16.7</span>ms 就会执行一次回调函数。</span><br><span class="line">C: promise.then中回调是异步执行的，且比setTimeout先执行。</span><br><span class="line">D: 做动画效果，建议使用 requestAnimationFrame &gt; setTimeout</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>9.题目描述：</strong>以下选项错误的是：</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A: 我们应该尽量避免使用 <span class="string">"=="</span> 来做比较</span><br><span class="line">B: <span class="built_in">Object</span>.is 与 “===” 除了对 <span class="literal">NaN</span> 的比较结果不同外，比较行为基本一致</span><br><span class="line">C: 通过 <span class="built_in">Object</span> toString 方法可以帮助我们查看数据的类型，Obejct.prototype.toString.call(<span class="literal">NaN</span>) 返回的值为 <span class="string">'[object Number]'</span></span><br><span class="line">D: 表达式 toString.call(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'test'</span>)) === toString.call(<span class="string">'test'</span>) &amp;&amp; <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'test'</span>) !== <span class="built_in">String</span>(<span class="string">'test'</span>) 的结果是 <span class="literal">true</span>。</span><br><span class="line">E: <span class="built_in">Date</span> 实例的 toLocaleString 方法的返回值会根据语言环境返回不同的值。</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>10.题目描述：</strong>关于以下说法正确的是：</p>
+<p>​    <strong>题目答案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A: C/C++ 可以编译成WebAssembly，由于语言的特性，在运行性能上比Javascript快很多，也能突破浏览器限制，实现变声器、GPU运算等功能</span><br><span class="line">B: 编写shader代码能很简单的将彩色图片变成黑白图片，比canvas逐像素修改快很多</span><br><span class="line">C: 因为浏览器安全策略，https的网站无法建立ws链接，无论其是否跨域，必须使用wss</span><br><span class="line">D: webworker中程序与主程序通过postMessage通信，且在其中的运算不阻塞浏览器渲染进程</span><br><span class="line">E: tanslate3D会开启硬件加速，在保证动画流畅的同时也有可能增加性能消耗</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<h2 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a><strong>编程题</strong></h2><p><strong>1.题目描述：</strong>实现可以反转字符串的函数方法。</p>
+<p>​    <strong>题目解析</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>2.题目描述：</strong>实现可以撤销的 Promise 方法。</p>
+<p>​    <strong>题目解析</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCancelablePromise</span>(<span class="params">promise</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> isCanceled = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">const</span> cancelablePromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">		promise</span><br><span class="line">		.then(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">			isCanceled ? reject(&#123;<span class="attr">isCanceled</span>: <span class="literal">true</span>&#125;) : resolve(value);</span><br><span class="line">		&#125;)</span><br><span class="line">		.catch(<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line">			isCanceled ? reject(&#123;<span class="attr">isCanceled</span>: <span class="literal">true</span>&#125;) : reject(error);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		promise: cancelablePromise,</span><br><span class="line">		cancel()&#123;</span><br><span class="line">			isCanceled = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createCancelablePromise;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.题目描述：</strong>Markdown 是非常受技术人员喜欢的一种文本格式，请使用 JavaScript 来实现 marked方法来进行 markdown 文本的 HTML 渲染，可以满足以下需求：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">marked</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// your code here</span></span><br><span class="line">&#125;</span><br><span class="line">marked(<span class="string">'@@whatever@@'</span>).trim() <span class="comment">// &lt;p&gt;&lt;blink&gt;whatever&lt;/blink&gt;&lt;/p &gt;</span></span><br><span class="line">marked(<span class="string">'*abc* @@def@@ __ghi__'</span>).trim() <span class="comment">// &lt;p&gt;&lt;em&gt;abc&lt;/em&gt; &lt;blink&gt;def&lt;/blink&gt; &lt;strong&gt;ghi&lt;/strong&gt;&lt;/p &gt;</span></span><br><span class="line">marked(<span class="string">'@@**cool**@@'</span>).trim() <span class="comment">// &lt;p&gt;&lt;blink&gt;&lt;strong&gt;cool&lt;/strong&gt;&lt;/blink&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>4.题目描述：</strong>实现一个金额展示格式化的函数 formatAmount，金额展示规则为整数部分每三位用逗号分割，小数部分展示两位。输入数据不是数字时返回 “-“。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">举例：</span><br><span class="line">formatAmount(<span class="number">2688</span>) =&gt; <span class="string">"2,688.00"</span></span><br><span class="line">formatAmount(<span class="string">"2e6"</span>) =&gt; <span class="string">"2,000,000.00"</span></span><br><span class="line">formatAmount(<span class="number">-2.33333333</span>) =&gt; <span class="string">"-2.33"</span></span><br><span class="line">formatAmount(<span class="string">"Alibaba"</span>) =&gt; <span class="string">"-"</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>5.题目描述：</strong>实现 parse 函数，满足如下用例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> template = <span class="string">'there are $&#123;count&#125; $&#123;name&#125; on the $&#123;place&#125;.'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      tag: <span class="string">'div'</span>,</span><br><span class="line">    children: value</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parse</span>(<span class="params">tpl, data, create</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 补充代码</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(parse(template, &#123;<span class="attr">count</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'apples'</span>, <span class="attr">place</span>: <span class="string">'table'</span>&#125;, create));</span><br><span class="line"><span class="comment">/* 输出数据如下，最终输出的是混合了字符串和 JSON 对象的数组。</span></span><br><span class="line"><span class="comment">['there are ', &#123;tag: 'div', children: 2&#125;, ' ', &#123;tag: 'div', children: 'apples'&#125;,' on the ', &#123;tag: 'div', children: 'table'&#125;, '.']</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>6.题目描述：</strong>请编写html与css代码实现前三个字元素互相居中对齐，最后一个元素基于容器居上对齐。</p>
+<img src="/2020/03/02/alitest/bian7.png" style="zoom: 20%;">
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>7.题目描述：</strong>编写至少两种方法，从url上获取参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">url,name</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//your code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(<span class="string">"https://a.com/?a=1&amp;b=2"</span>,<span class="string">"a"</span>); <span class="comment">//1</span></span><br><span class="line">fn(<span class="string">"https://a.com/?a=1&amp;b=2"</span>,<span class="string">"b"</span>); <span class="comment">//2</span></span><br><span class="line">fn(<span class="string">"https://a.com/?a=1&amp;b=2"</span>,<span class="string">"c"</span>); <span class="comment">//null</span></span><br><span class="line">fn(<span class="string">"https://a.com/?a=1"</span>,<span class="string">"a"</span>); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>8.题目描述：</strong>通过诸如一段代码，改变console.log的实现，使得使用console.log产生以下效果:</p>
+<img src="/2020/03/02/alitest/bian8.png" style="zoom: 20%;">
+
+<p>​    <strong>题目解析</strong></p>
+<p><strong>9.题目描述：</strong>创建一个价值1个亿的语音聊天机器人，规则如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当用户说：你今天开心吗？机器人回复 我今天开心——将你替换成我，去掉<span class="string">"吗"</span>这个字，不做额外的语意理解</span><br><span class="line">(提示：可以使用chrome中Speech相关的API实现，也可以使用阿里云(https:<span class="comment">//help.aliyun.com/document_detail/72138.html),  百度AI(https://ai.baidu.com/tech/speech/)实现):</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="开放题"><a href="#开放题" class="headerlink" title="开放题"></a>开放题</h2><p><strong>1.题目描述：</strong>你如何看待小程序的发展？它有什么优势和劣势？以及未来的走向。</p>
+<p>​    <strong>题目解析</strong></p>
+<h2 id="概述题"><a href="#概述题" class="headerlink" title="概述题"></a>概述题</h2><p><strong>1.题目描述：</strong>解释一下在webgl中，半透明物体互相遮挡的问题，提出你的解决方案</p>
+<p><img src="/2020/03/02/alitest/gai1.png" style="zoom: 20%;"><img src="/2020/03/02/alitest/gai12.png" style="zoom: 25%;"></p>
+<p><strong>题目解析</strong></p>
 
       
     </div>
@@ -358,7 +414,7 @@ export default createCancelablePromise;
         <p><span>本文标题:</span><a href="/2020/03/02/alitest/">阿里云达摩院实习笔试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
         <p><span>发布时间:</span>2020-03-02, 21:31:32</p>
-        <p><span>最后更新:</span>2020-03-02, 22:15:00</p>
+        <p><span>最后更新:</span>2020-03-03, 00:50:09</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/02/alitest/" title="阿里云达摩院实习笔试题">https://guoxiangguoxiang.github.io/2020/03/02/alitest/</a>
             <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/03/02/alitest/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -388,7 +444,7 @@ export default createCancelablePromise;
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择题1"><span class="toc-number">1.</span> <span class="toc-text">####选择题1####</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解析"><span class="toc-number">2.</span> <span class="toc-text">####解析####</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程题1"><span class="toc-number">3.</span> <span class="toc-text">####编程题1####</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解析-1"><span class="toc-number">4.</span> <span class="toc-text">####解析####</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程题2"><span class="toc-number">5.</span> <span class="toc-text">####编程题2####</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解析-2"><span class="toc-number">6.</span> <span class="toc-text">####解析####</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择题"><span class="toc-number">1.</span> <span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程题"><span class="toc-number">2.</span> <span class="toc-text">编程题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开放题"><span class="toc-number">3.</span> <span class="toc-text">开放题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概述题"><span class="toc-number">4.</span> <span class="toc-text">概述题</span></a></li></ol>
         
     </div>
     <style>
