@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="选择题：10        编程题：9        概述题：1        开放题：1">
+<meta name="description" content="选择题：10        编程题：11        概述题：2        开放题：1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云达摩院实习笔试题">
 <meta property="og:url" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/index.html">
 <meta property="og:site_name" content="zhanzhan&#39;s blog">
-<meta property="og:description" content="选择题：10        编程题：9        概述题：1        开放题：1">
+<meta property="og:description" content="选择题：10        编程题：11        概述题：2        开放题：1">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/bian7.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/bian8.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/gai1.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/gai12.png">
 <meta property="article:published_time" content="2020-03-02T13:31:32.634Z">
-<meta property="article:modified_time" content="2020-03-02T16:50:09.830Z">
+<meta property="article:modified_time" content="2020-03-12T06:16:43.123Z">
 <meta property="article:author" content="zhanzhan">
 <meta property="article:tag" content="阿里云">
 <meta property="article:tag" content="实习">
@@ -311,8 +311,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong>选择题：</strong>10        <strong>编程题：</strong>9        <strong>概述题：</strong>1        <strong>开放题：</strong>1</p>
+        <p><strong>选择题：</strong>10        <strong>编程题：</strong>11        <strong>概述题：</strong>2        <strong>开放题：</strong>1</p>
 <a id="more"></a>
+
 <h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a><strong>选择题</strong></h2><p><strong>1.题目描述：</strong>选出以下正确项：</p>
 <p>​    <strong>题目答案：</strong>BCD</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Pencil = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> redPencil = <span class="keyword">new</span> Pencil();</span><br><span class="line"></span><br><span class="line">A. Pencil.__proto__.constructor === Pencil</span><br><span class="line">B. redPencil.__proto__.constructor === Pencil</span><br><span class="line">C. redPencil.__proto__.__proto__ === <span class="built_in">Object</span>.prototype</span><br><span class="line">D. redPencil.__proto__.__proto__ === <span class="built_in">Function</span>.__proto__.__proto__</span><br></pre></td></tr></table></figure>
@@ -397,11 +398,20 @@
 <p>​    <strong>题目解析</strong></p>
 <p><strong>9.题目描述：</strong>创建一个价值1个亿的语音聊天机器人，规则如下:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当用户说：你今天开心吗？机器人回复 我今天开心——将你替换成我，去掉<span class="string">"吗"</span>这个字，不做额外的语意理解</span><br><span class="line">(提示：可以使用chrome中Speech相关的API实现，也可以使用阿里云(https:<span class="comment">//help.aliyun.com/document_detail/72138.html),  百度AI(https://ai.baidu.com/tech/speech/)实现):</span></span><br></pre></td></tr></table></figure>
+<p><strong>10.题目描述：</strong>写一个装饰器函函数，实现如下功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	@log</span><br><span class="line">	sayName(name)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> testIns = <span class="keyword">new</span> Test();</span><br><span class="line"></span><br><span class="line">testIns.sayName(<span class="string">'Eric'</span>);  <span class="comment">//打印内容：Hello, Eric</span></span><br><span class="line">testIns.sayName(<span class="string">'John'</span>);	<span class="comment">//打印内容：Hello, John</span></span><br></pre></td></tr></table></figure>
 
+<p>​    <strong>题目解析</strong></p>
+<p><strong>11.题目描述：</strong>实现一个可以设置超时机制的PromiseWithTimeout，超过设置的时长promise未返回则触发超时</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//效果</span></span><br><span class="line"><span class="keyword">const</span> timeout = <span class="number">2000</span>;</span><br><span class="line"><span class="keyword">new</span> PromiseWithTimeOut(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">		resolve(<span class="string">'hello world'</span>);</span><br><span class="line">	&#125;,timeout);</span><br><span class="line">&#125;,<span class="number">3000</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'我正常返回了'</span>,res);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.error(<span class="string">'我超时了'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//结果：当timeout &gt; 3000 时，输出：我超时了</span></span><br><span class="line"><span class="comment">//当timeout &lt; 3000 时输出：我正常返回了helloworld</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目解析</strong></p>
 <h2 id="开放题"><a href="#开放题" class="headerlink" title="开放题"></a>开放题</h2><p><strong>1.题目描述：</strong>你如何看待小程序的发展？它有什么优势和劣势？以及未来的走向。</p>
 <p>​    <strong>题目解析</strong></p>
 <h2 id="概述题"><a href="#概述题" class="headerlink" title="概述题"></a>概述题</h2><p><strong>1.题目描述：</strong>解释一下在webgl中，半透明物体互相遮挡的问题，提出你的解决方案</p>
 <p><img src="/2020/03/02/alitest/gai1.png" style="zoom: 20%;"><img src="/2020/03/02/alitest/gai12.png" style="zoom: 25%;"></p>
+<p><strong>题目解析</strong></p>
+<p><strong>2.题目描述：</strong>请描述跨域的原理，并列举有多少种解决跨域问题的方法</p>
 <p><strong>题目解析</strong></p>
 
       
@@ -414,7 +424,7 @@
         <p><span>本文标题:</span><a href="/2020/03/02/alitest/">阿里云达摩院实习笔试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
         <p><span>发布时间:</span>2020-03-02, 21:31:32</p>
-        <p><span>最后更新:</span>2020-03-03, 00:50:09</p>
+        <p><span>最后更新:</span>2020-03-12, 14:16:43</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/02/alitest/" title="阿里云达摩院实习笔试题">https://guoxiangguoxiang.github.io/2020/03/02/alitest/</a>
             <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/03/02/alitest/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
