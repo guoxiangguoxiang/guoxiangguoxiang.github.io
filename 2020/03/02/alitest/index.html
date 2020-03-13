@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/gai1.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/02/alitest/gai12.png">
 <meta property="article:published_time" content="2020-03-02T13:31:32.634Z">
-<meta property="article:modified_time" content="2020-03-13T15:26:41.371Z">
+<meta property="article:modified_time" content="2020-03-13T15:37:44.633Z">
 <meta property="article:author" content="zhanzhan">
 <meta property="article:tag" content="阿里云">
 <meta property="article:tag" content="实习">
@@ -334,7 +334,8 @@
 <p><strong>注：</strong></p>
 <p><strong>解构：</strong>解构赋值允许你使用类似数组或对象字面量的语法将数组和对象的属性赋给各种变量。</p>
 <ul>
-<li><p>数组的解构</p>
+<li>数组的解构</li>
+</ul>
 <p>数组解构赋值的一个简单示例，其语法的一般形式为:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [ variable1, variable2, ..., variableN ] = array;</span><br><span class="line"><span class="keyword">let</span> [ variable1, variable2, ..., variableN ] = array;</span><br><span class="line"><span class="keyword">const</span> [ variable1, variable2, ..., variableN ] = array;</span><br></pre></td></tr></table></figure>
 
@@ -346,14 +347,16 @@
 
 <p>当访问空数组或越界访问数组时，对其解构与对其索引的行为一致，最终得到的结果都是：<code>undefined</code>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([][<span class="number">0</span>]);</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> [missing] = [];</span><br><span class="line"><span class="built_in">console</span>.log(missing);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>迭代器的解构</p>
-<p>数组解构赋值的模式同样适用于任意迭代器：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">yield</span> a;</span><br><span class="line">        [a, b] = [b, a + b];</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> [first, second, third, fourth, fifth, sixth] = fibs();</span><br><span class="line"><span class="built_in">console</span>.log(first);<span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(second);<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(third);<span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(fourth);<span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(fifth);<span class="comment">//4</span></span><br><span class="line"><span class="built_in">console</span>.log(sixth);<span class="comment">//5</span></span><br></pre></td></tr></table></figure>
 
-<p>var [first, second, third, fourth, fifth, sixth] = fibs();相当于调用了五次next方法，我们看下调用的过程，第一次调用a=0，通过yield返回0 赋值给first，[a,b] = [0,1] 第二次调用， [a,b] =[1,2],a=1通过yield返回1,赋值给second，第三次 [a,b] = [2,3] 依次类推，[first, second, third, fourth, fifth, sixth] = [0,1,2,3,4,5] </p>
-</li>
-<li><p>对象的解构</p>
+<ul>
+<li>迭代器的解构</li>
+</ul>
+<p>数组解构赋值的模式同样适用于任意迭代器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">yield</span> a;</span><br><span class="line">        [a, b] = [b, a + b];</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> [first, second, third, fourth, fifth, sixth] = fibs();</span><br><span class="line"><span class="built_in">console</span>.log(first);<span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(second);<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(third);<span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(fourth);<span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(fifth);<span class="comment">//4</span></span><br><span class="line"><span class="built_in">console</span>.log(sixth);<span class="comment">//5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [first, second, third, fourth, fifth, sixth] = fibs();相当于调用了五次next方法，我们看下调用的过程，第一次调用a=<span class="number">0</span>，通过<span class="keyword">yield</span>返回<span class="number">0</span> 赋值给first，[a,b] = [<span class="number">0</span>,<span class="number">1</span>] 第二次调用， [a,b] =[<span class="number">1</span>,<span class="number">2</span>],a=<span class="number">1</span>通过<span class="keyword">yield</span>返回<span class="number">1</span>,赋值给second，第三次 [a,b] = [<span class="number">2</span>,<span class="number">3</span>] 依次类推，[first, second, third, fourth, fifth, sixth] = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象的解构</li>
+</ul>
 <p>你可以把它的每个属性与不同的变量绑定，首先指定被绑定的属性，然后紧跟一个要解构的变量。当属性名与变量名一致时，可以通过一种实用的句法简写：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123; foo, bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"lorem"</span>, <span class="attr">bar</span>: <span class="string">"ipsum"</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="comment">// "lorem"</span></span><br><span class="line"><span class="built_in">console</span>.log(bar);</span><br><span class="line"><span class="comment">// "ipsum"</span></span><br></pre></td></tr></table></figure>
 
@@ -363,30 +366,36 @@
 <p>当解构对象并赋值给变量时，如果你已经声明或不打算声明这些变量（亦即赋值语句前没有<code>let</code>、<code>const</code>或<code>var</code>关键字），会存在一个潜在的语法错误：Syntax error</p>
 <p>因为JavaScript语法通知解析引擎将任何以{开始的语句解析为一个块语句（例如，<code>{console}</code>是一个合法块语句）。解决方案是将整个表达式用一对小括号包裹：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(&#123; safe &#125; = &#123;&#125;);</span><br><span class="line"><span class="comment">// No errors 没有语法错误</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解构值不是对象、数组或迭代器</p>
+
+<ul>
+<li>解构值不是对象、数组或迭代器</li>
+</ul>
 <p><strong>解构null或undefined时，会报错：Typerror</strong>，而解构布尔值、数值、字符串，得到undefined</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123;wtf&#125; = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">//报错</span></span><br><span class="line"><span class="keyword">var</span> &#123;wtf&#125; = <span class="literal">NaN</span>;</span><br><span class="line"><span class="built_in">console</span>.log(wtf);</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 
 <p>当使用对象赋值模式时，被解构的值需要被强制转换为对象。大多数类型都可以被转换为对象，但<code>null</code>和<code>undefined</code>却无法进行转换。<strong>当使用数组赋值模式时，被解构的值一定要包含一个迭代器</strong></p>
-</li>
-<li><p>默认值</p>
+<ul>
+<li>默认值</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [missing = <span class="literal">true</span>] = [];</span><br><span class="line"><span class="built_in">console</span>.log(missing);</span><br><span class="line"><span class="comment">// true</span></span><br><span class="line"><span class="keyword">var</span> &#123; <span class="attr">message</span>: msg = <span class="string">"Something went wrong"</span> &#125; = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(msg);</span><br><span class="line"><span class="comment">// "Something went wrong"</span></span><br><span class="line"><span class="keyword">var</span> &#123; x = <span class="number">3</span> &#125; = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数参数定义</p>
+
+<ul>
+<li>函数参数定义</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">m1</span>(<span class="params">&#123;x = <span class="number">0</span>, y = <span class="number">0</span>&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">m2</span>(<span class="params">&#123;x, y&#125; = &#123; x: <span class="number">0</span>, y: <span class="number">0</span> &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数没有参数的情况</span></span><br><span class="line"><span class="built_in">console</span>.log(m1());  <span class="comment">// [0, 0]</span></span><br><span class="line"><span class="built_in">console</span>.log(m2()); <span class="comment">// [0, 0]</span></span><br><span class="line"><span class="comment">// x和y都有值的情况</span></span><br><span class="line"><span class="built_in">console</span>.log(m1(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;)); <span class="comment">// [3, 8]</span></span><br><span class="line"><span class="built_in">console</span>.log(m2(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;)); <span class="comment">// [3, 8]</span></span><br><span class="line"><span class="comment">// x有值，y无值的情况</span></span><br><span class="line"><span class="built_in">console</span>.log(m1(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;)); <span class="comment">// [3, 0]</span></span><br><span class="line"><span class="built_in">console</span>.log(m2(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;));<span class="comment">// [3, undefined]</span></span><br><span class="line"><span class="comment">// x和y都无值的情况</span></span><br><span class="line"><span class="built_in">console</span>.log(m1(&#123;&#125;));<span class="comment">// [0, 0];</span></span><br><span class="line"><span class="built_in">console</span>.log(m2(&#123;&#125;)); <span class="comment">// [undefined, undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(m1(&#123;<span class="attr">z</span>: <span class="number">3</span>&#125;));<span class="comment">// [0, 0]</span></span><br><span class="line"><span class="built_in">console</span>.log(m2(&#123;<span class="attr">z</span>: <span class="number">3</span>&#125;));<span class="comment">// [undefined, undefined]</span></span><br></pre></td></tr></table></figure>
 
 <p>方法一给参数赋予默认值（{}即空对象），并且给解构对象设置了默认值，变量x默认值为0，变量y默认值为0；方法二也给参数赋予了默认值（属性对象{ x: 0, y: 0 }），但是没有给解构对象赋值</p>
 <p>在没有传递参数的情况，方法一首先在{}对象中找自己想要的值，没有找到，就是用了解构对象中的默认值，方法二在{ x: 0, y: 0 }对象中找到了自己想要的值，直接拿来使用了；在有参数传递过来的情况下，无论方法一还是方法二，参数（解构对象）的指针都会指向传递过来的参数（属性对象），不再指示{}或{ x: 0, y: 0 }也就是说在找默认值就不能在这两个对象中找了，如果传递过来参数包含x、y那么直接使用，如果缺少x或y那么会到解构对象中寻找默认值，对于方法二，没有设置解构对象默认值，那么返回undefined</p>
-</li>
-<li><p>与ES6迭代器协议协同使用</p>
+<ul>
+<li>与ES6迭代器协议协同使用</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="built_in">window</span>, <span class="string">"the global"</span>);</span><br><span class="line">map.set(<span class="built_in">document</span>, <span class="string">"the document"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [key, value] <span class="keyword">of</span> map) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(key + <span class="string">" is "</span> + value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "[object Window] is the global"</span></span><br><span class="line"><span class="comment">// "[object HTMLDocument] is the document"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//只遍历键</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [key] <span class="keyword">of</span> map) &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//只遍历值</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [,value] <span class="keyword">of</span> map) &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多重返回值</p>
+
+<ul>
+<li>多重返回值</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> [foo, bar] = returnMultipleValues();</span><br><span class="line"></span><br><span class="line"><span class="comment">//用一个对象作为容器并为返回值命名</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        foo: <span class="number">1</span>,</span><br><span class="line">        bar: <span class="number">2</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">var</span> &#123; foo, bar &#125; = returnMultipleValues();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用CPS变换：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params">k</span>) </span>&#123;</span><br><span class="line">      k(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line">returnMultipleValues(<span class="function">(<span class="params">foo, bar</span>) =&gt;</span> ...);</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
 <p><strong>不定参数（…）</strong></p>
 <ul>
 <li>用在形参中， 表示传递给他的参数集合， 类似于arguments, 叫不定参数. 语法格式:  在形参面前加三个点( … )</li>
@@ -402,10 +411,10 @@
 <p><strong>注：</strong></p>
 <p><strong>Javascript的执行机制</strong>：javascript是一门单线程语言</p>
 <ul>
-<li><p><strong>javascript时间循环</strong></p>
-<img src="/2020/03/02/alitest/同步和异步.png" style="zoom:33%;">
-</li>
+<li><strong>javascript时间循环</strong></li>
 </ul>
+<img src="/2020/03/02/alitest/同步和异步.png" style="zoom:33%;">
+
 <ol>
 <li>同步和异步任务分别进入不同的执行”场所”，同步的进入主线程，异步的进入Event Table并注册函数。</li>
 <li>当指定的事情完成时，Event Table会将这个函数移入Event Queue。</li>
@@ -413,7 +422,8 @@
 <li>上述过程会不断重复，也就是常说的Event Loop(事件循环)。</li>
 </ol>
 <ul>
-<li><p><strong>setTimeout</strong></p>
+<li><strong>setTimeout</strong></li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    task()</span><br><span class="line">&#125;,<span class="number">3000</span>)</span><br><span class="line"></span><br><span class="line">sleep(<span class="number">10000000</span>)</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -424,12 +434,14 @@
 </ul>
 <p><code>setTimeout(fn,0)</code>的含义是，指定某个任务在主线程最早可得的空闲时间执行，意思就是不用再等多少秒了，只要主线程执行栈内的同步任务全部执行完成，栈为空就马上执行</p>
 <p>关于<code>setTimeout</code>要补充的是，即便主线程为空，0毫秒实际上也是达不到的。根据HTML的标准，最低是4毫秒</p>
-</li>
-<li><p><strong>setInterval</strong></p>
+<ul>
+<li><strong>setInterval</strong></li>
+</ul>
 <p>对于执行顺序来说，<code>setInterval</code>会每隔指定的时间将注册的函数置入Event Queue，如果前面的任务耗时太久，那么同样需要等待</p>
 <p>唯一需要注意的一点是，对于<code>setInterval(fn,ms)</code>来说，我们已经知道不是每过<code>ms</code>秒会执行一次<code>fn</code>，而是每过<code>ms</code>秒，会有<code>fn</code>进入Event Queue。一旦<strong>setInterval的回调函数fn执行时间超过了延迟时间ms，那么就完全看不出来有时间间隔了</strong></p>
-</li>
-<li><p><strong>Promise与process.nextTick(callback)</strong></p>
+<ul>
+<li><strong>Promise与process.nextTick(callback)</strong></li>
+</ul>
 <p><code>process.nextTick(callback)</code>类似node.js版的”setTimeout”，在事件循环的下一次循环中调用 callback 回调函数。</p>
 <p>所谓<code>Promise</code>，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。</p>
 <p>我们进入正题，除了广义的同步任务和异步任务，我们对任务有更精细的定义：</p>
@@ -438,20 +450,18 @@
 <li>micro-task(微任务)：Promise，process.nextTick</li>
 </ul>
 <p>事件循环的顺序，决定js代码的执行顺序。进入整体代码(宏任务)后，开始第一次循环。接着执行所有的微任务。然后再次从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'setTimeout'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise'</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'then'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'console'</span>);</span><br><span class="line"></span><br><span class="line">这段代码作为宏任务，进入主线程。</span><br><span class="line">先遇到<span class="string">`setTimeout`</span>，那么将其回调函数注册后分发到宏任务Event Queue。</span><br><span class="line">接下来遇到了<span class="string">`Promise`</span>，<span class="string">`new Promise`</span>立即执行，<span class="string">`then`</span>函数分发到微任务Event Queue。</span><br><span class="line">遇到<span class="string">`console.log()`</span>，立即执行。</span><br><span class="line">好啦，整体代码script作为第一个宏任务执行结束，看看有哪些微任务？我们发现了<span class="string">`then`</span>在微任务Event Queue里面，执行。</span><br><span class="line">第一轮事件循环结束了，我们开始第二轮循环，当然要从宏任务Event Queue开始。我们发现了宏任务Event Queue中<span class="string">`setTimeout`</span>对应的回调函数，立即执行。</span><br><span class="line">结束。</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'setTimeout'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise'</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'then'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'console'</span>);</span><br><span class="line"></span><br><span class="line">这段代码作为宏任务，进入主线程。</span><br><span class="line">先遇到<span class="string">`setTimeout`</span>，那么将其回调函数注册后分发到宏任务Event Queue。</span><br><span class="line">接下来遇到了<span class="string">`Promise`</span>，<span class="string">`new Promise`</span>立即执行，<span class="string">`then`</span>函数分发到微任务Event Queue。</span><br><span class="line">遇到<span class="string">`console.log()`</span>，立即执行。</span><br><span class="line">整体代码script作为第一个宏任务执行结束，看看有哪些微任务？我们发现了<span class="string">`then`</span>在微任务Event Queue里面，执行。</span><br><span class="line">第一轮事件循环结束了，我们开始第二轮循环，当然要从宏任务Event Queue开始。我们发现了宏任务Event Queue中<span class="string">`setTimeout`</span>对应的回调函数，立即执行。</span><br><span class="line">结束。</span><br></pre></td></tr></table></figure>
 
 <img src="/2020/03/02/alitest/宏任务与微任务.png" style="zoom:33%;">
 
 <ul>
-<li><p><strong>(1)js的异步</strong></p>
+<li><strong>(1)js的异步</strong></li>
+</ul>
 <p>我们从最开头就说javascript是一门单线程语言，不管是什么新框架新语法糖实现的所谓异步，其实都是用同步的方法去模拟的，牢牢把握住单线程这点非常重要。</p>
-</li>
-<li><p><strong>(2)事件循环Event Loop</strong></p>
+<ul>
+<li><strong>(2)事件循环Event Loop</strong></li>
+</ul>
 <p>事件循环是js实现异步的一种方法，也是js的执行机制。</p>
-</li>
-</ul>
-</li>
-</ul>
 <blockquote>
 </blockquote>
 <p><strong>4.题目描述：</strong>关于浏览器网络知识，以下说法正确的是（不定选型）</p>
@@ -566,7 +576,7 @@
         <p><span>本文标题:</span><a href="/2020/03/02/alitest/">阿里云达摩院实习笔试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
         <p><span>发布时间:</span>2020-03-02, 21:31:32</p>
-        <p><span>最后更新:</span>2020-03-13, 23:26:41</p>
+        <p><span>最后更新:</span>2020-03-13, 23:37:44</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/02/alitest/" title="阿里云达摩院实习笔试题">https://guoxiangguoxiang.github.io/2020/03/02/alitest/</a>
             <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/03/02/alitest/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
