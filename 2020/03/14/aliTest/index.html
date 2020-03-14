@@ -21,24 +21,24 @@
 <meta property="og:url" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/index.html">
 <meta property="og:site_name" content="zhanzhan&#39;s blog">
 <meta property="og:description" content="选择题：10        编程题：11        概述题：2        开放题：1">
-<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/alitest%5C%E5%8E%9F%E5%9E%8B%E9%93%BE1.png">
-<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/alitest%5C%E5%8E%9F%E5%9E%8B2.png">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/%E5%8E%9F%E5%9E%8B%E9%93%BE1.png">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/%E5%8E%9F%E5%9E%8B2.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E4%B8%8E%E5%BE%AE%E4%BB%BB%E5%8A%A1.png">
-<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/alitest%5Chttp%E5%8D%8F%E8%AE%AE.png">
-<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/alitest%5CPromise1.png">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/alitest/http%E5%8D%8F%E8%AE%AE.png">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/Promise1.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/bian7.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/bian8.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/flex1.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/gai1.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/gai12.png">
 <meta property="article:published_time" content="2020-03-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-14T12:26:28.505Z">
+<meta property="article:modified_time" content="2020-03-14T12:42:09.646Z">
 <meta property="article:author" content="zhanzhan">
 <meta property="article:tag" content="阿里云">
 <meta property="article:tag" content="实习笔试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/alitest%5C%E5%8E%9F%E5%9E%8B%E9%93%BE1.png">
+<meta name="twitter:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/%E5%8E%9F%E5%9E%8B%E9%93%BE1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -346,9 +346,11 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name=name;</span><br><span class="line">	<span class="keyword">this</span>.age=age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//this是什么要看执行的时候谁调用了这个函数。</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"I'm "</span>+<span class="keyword">this</span>.name+<span class="string">" And I'm "</span>+<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn=<span class="keyword">new</span> Foo(<span class="string">'小明'</span>,<span class="number">19</span>);</span><br><span class="line">fn.toString(); <span class="comment">//I'm 小明 And I'm 19</span></span><br><span class="line"><span class="built_in">console</span>.log(fn.toString === Foo.prototype.__proto__.toString); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fn.__proto__ === Foo.prototype)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(Foo.prototype.__proto__===<span class="built_in">Object</span>.prototype)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__===<span class="literal">null</span>)<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/03/14/aliTest/alitest%5C%E5%8E%9F%E5%9E%8B%E9%93%BE1.png" alt></p>
+<img src="/2020/03/14/aliTest/原型链1.png" style="zoom:33%;">
+
 <p>在使用原型的时候，一般推荐将需要扩展的方法写在<code>构造函数的prototype属性</code>中，避免写在<code>_ _ proto _ _</code>属性里面。</p>
-<p><img src="/2020/03/14/aliTest/alitest%5C%E5%8E%9F%E5%9E%8B2.png" alt></p>
+<img src="/2020/03/14/aliTest/原型2.png" style="zoom:33%;">
+
 <p><strong>2.题目描述：</strong>对于解构以下说法错误的是：</p>
 <p>​    <strong>题目答案：</strong>D</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. 不完全解构，也会成功，不会报错</span><br><span class="line">B. 只要支持Iterator接口，都可以被解构赋值</span><br><span class="line">C. null可以替代默认值，而成功的解构赋值</span><br><span class="line">D. 解构中不定参数可以出现在除第一个以外的其他位置</span><br><span class="line">E. 解构是先找到同名属性，然后再赋给对应的变量</span><br><span class="line">F. 默认值可以引用解构赋值的其他变量，但该变量必须已经声明</span><br></pre></td></tr></table></figure>
@@ -500,7 +502,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">A：CORS支持所有类型的HTTP请求，JSONP只支持GET请求</span><br><span class="line">   常见<span class="number">8</span>中跨域方式（以下为其余<span class="number">6</span>种）：</span><br><span class="line">   图像PING跨域、<span class="built_in">window</span>.name跨域、location.hash跨域、postMessage跨域、服务器代理、WebSocket</span><br><span class="line">C：<span class="number">400</span>是参数错误，<span class="number">500</span>是服务器内部错误</span><br><span class="line">   <span class="number">1</span>XX——信息类（Information）</span><br><span class="line">    表示收到http请求，正在进行下一步处理，通常是一种瞬间的响应状态</span><br><span class="line">    <span class="number">100</span> (Continue)：信息型状态响应码表示目前为止一切正常, 客户端应该继续请求, 如果已完成请求则忽略</span><br><span class="line">    <span class="number">101</span> (Switching Protocol)：状态码表示服务器应客户端升级协议的请求（Upgrade请求头）正在进行协议切换。</span><br><span class="line">   <span class="number">2</span>XX——成功类（Successful）</span><br><span class="line">    表示用户请求被正确接收、理解和处理</span><br><span class="line">    <span class="number">200</span>（OK）：请求成功。一般用于GET与POST请求</span><br><span class="line">    <span class="number">201</span>（Created）：已创建。成功请求并创建了新的资源</span><br><span class="line">    <span class="number">202</span>（Accepted）：表示服务器端已经收到请求消息，但是尚未进行处理。但是对于请求的处理确实无保证的，即稍后无法通过 HTTP 协议给客户端发送一个异步请求来告知其请求的处理结果。这个状态码被设计用来将请求交由另外一个进程或者服务器来进行处理，或者是对请求进行批处理的情形。</span><br><span class="line">   <span class="number">3</span>XX——重定向类（Redirection）</span><br><span class="line">    表示没有请求成功，必须采取进一步的动作</span><br><span class="line">    <span class="number">301</span>（Moved Permanently）：资源被永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI</span><br><span class="line">    <span class="number">302</span>（Found）：资源临时移动。资源只是临时被移动，客户端应继续使用原有URI</span><br><span class="line">    <span class="number">304</span>：用其他策略获取资源</span><br><span class="line">   <span class="number">4</span>XX——客户端错误（Client <span class="built_in">Error</span>）</span><br><span class="line">    表示客户端提交的请求包含语法错误或不能正确执行</span><br><span class="line">    <span class="number">400</span>（Bad Requests）：客户端请求的地址不存在或者包含不支持的参数</span><br><span class="line">    <span class="number">401</span>（Unauthorized）：未授权，或认证失败。对于需要登录的网页，服务器可能返回此响应</span><br><span class="line">    <span class="number">403</span>（Forbidden）：没权限。服务器收到请求，但拒绝提供服务</span><br><span class="line">    <span class="number">404</span>（Not Found）：请求的资源不存在。遇到<span class="number">404</span>首先检查请求url是否正确</span><br><span class="line">    <span class="number">5</span>XX——服务端错误（Server <span class="built_in">Error</span>）</span><br><span class="line">    表示服务器不能正确执行一个正确的请求（客户端请求的方法及参数是正确的，服务端不能正确执行，如网络超时、服务僵死，可以查看服务端日志再进一步解决）</span><br><span class="line">   	<span class="number">500</span>（Internal Server <span class="built_in">Error</span>）：服务器内部错误，无法完成请求</span><br><span class="line">    <span class="number">503</span>（Service Unavailable）：由于超载或系统维护（一般是访问人数过多），服务器无法处理客户端的请求 ，通常这只是暂时状态</span><br><span class="line">D:HTTP位于应用层</span><br><span class="line">  第一层：机械、电子、定时接口通信信道上的原始比特流传输</span><br><span class="line">  第二层：物理寻址，同时将原始比特流转变为逻辑传输线路</span><br><span class="line">  第三层：控制子网的运行，如逻辑编址，分组传输，路由选择</span><br><span class="line">  第四层：接受上一层的数据，在必要的时候把数据进行分割，并将这些数据交给网络层，且保证这些数据段有效到达对端</span><br><span class="line">  第五层：不同机器上的用户之间建立及管理会话</span><br><span class="line">  第六层：信息的语法语义以及他们的关联，如加密解密、转换翻译、压缩解压缩</span><br><span class="line">  第七层：各种应用程序协议，如HTTP、FTP、SMTP、POP3</span><br><span class="line">E：HTTP是受同源策略限制</span><br><span class="line">F：Gzip是前端常见的优化方式。但并不是所有浏览器都支持Gzip。需要在请求头中的Accept-Encoding来标识浏览器支持哪些压缩方式。然后服务端可以在响应头中加入content-encoding:gzip，来表明服务端使用了Gzip压缩方式。</span><br></pre></td></tr></table></figure>
 
 <p><strong>HTTP协议</strong></p>
-<p><img src="alitest%5Chttp%E5%8D%8F%E8%AE%AE.png" alt></p>
+<img src="alitest\http协议.png" style="zoom:33%;">
+
 <p><strong>5.题目描述：</strong>关于Promise的说法, 下述正确的是（不定选型）</p>
 <p>​    <strong>题目答案：</strong>ABD</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A. Promise.resolve 返回一个 <span class="built_in">Promise</span> 并把状态置为 fullfilled</span><br><span class="line">B. Promise.reject 返回一个 <span class="built_in">Promise</span> 并把状态置为 rejected</span><br><span class="line">C. Promise.all 中如果当前数组中所有的<span class="built_in">Promise</span>的状态置为 fullfilled 或 rejected, 自己的状态即置为 fullfilled</span><br><span class="line">D. Promise.race 中如果当前数组中率先改变状态的 <span class="built_in">Promise</span> 为 fullfilled, 则自己的状态即置为 fullfilled</span><br><span class="line">E. Promise.all方法可以接受一个数组作为参数，数组中的每一项都是一个<span class="built_in">Promise</span>的对象实例（如果不是，就会先调用<span class="built_in">Promise</span>.reslove方法，将参数转化为<span class="built_in">Promise</span>对象实例，再进行下一步的处理）。<span class="built_in">Promise</span>.all方法的参数不一定是数组，但是必须具有Iterator接口。</span><br><span class="line">F. Promise.race 中数组项必须为 <span class="built_in">Promise</span></span><br></pre></td></tr></table></figure>
@@ -510,7 +513,8 @@
 
 <p><strong>Promise：</strong>这种“承诺将来会执行”的对象在JavaScript中称为Promise对象</p>
 <p>Promise最大的好处是在异步执行的流程中，把执行代码和处理结果的代码清晰地分离了：</p>
-<p><img src="/2020/03/14/aliTest/alitest%5CPromise1.png" alt></p>
+<img src="/2020/03/14/aliTest/Promise1.png" style="zoom:33%;">
+
 <p>要串行执行这样的异步任务，不用Promise需要写一层一层的嵌套代码。有了Promise，我们只需要简单地写：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">job1.then(job2).then(job3).catch(handleError);</span><br></pre></td></tr></table></figure>
 
@@ -625,7 +629,7 @@
         <p><span>本文标题:</span><a href="/2020/03/14/aliTest/">阿里云达摩院实习笔试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
         <p><span>发布时间:</span>2020-03-14, 00:00:00</p>
-        <p><span>最后更新:</span>2020-03-14, 20:26:28</p>
+        <p><span>最后更新:</span>2020-03-14, 20:42:09</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/14/aliTest/" title="阿里云达摩院实习笔试题">https://guoxiangguoxiang.github.io/2020/03/14/aliTest/</a>
             <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/03/14/aliTest/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
