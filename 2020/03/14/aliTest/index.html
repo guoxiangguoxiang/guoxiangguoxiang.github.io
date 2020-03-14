@@ -29,9 +29,10 @@
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/gai1.png">
 <meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/gai12.png">
 <meta property="article:published_time" content="2020-03-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-14T04:20:00.778Z">
+<meta property="article:modified_time" content="2020-03-14T04:42:40.518Z">
 <meta property="article:author" content="zhanzhan">
-<meta property="article:tag" content="阿里云 - 实习">
+<meta property="article:tag" content="阿里云">
+<meta property="article:tag" content="实习笔试">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://guoxiangguoxiang.github.io/2020/03/14/aliTest/%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5.png">
 
@@ -196,7 +197,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A0%E6%B2%B9%E8%BF%9B%E5%A4%A7%E5%8E%82/" rel="tag">加油进大厂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%8B%E6%8B%9B%E8%AE%A1%E5%88%92/" rel="tag">秋招计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91-%E5%AE%9E%E4%B9%A0/" rel="tag">阿里云 - 实习</a></li></ul>
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A0%E6%B2%B9%E8%BF%9B%E5%A4%A7%E5%8E%82/" rel="tag">加油进大厂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/" rel="tag">实习笔试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%8B%E6%8B%9B%E8%AE%A1%E5%88%92/" rel="tag">秋招计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag">阿里云</a></li></ul>
                     </div>
                 </section>
                 
@@ -303,7 +304,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91-%E5%AE%9E%E4%B9%A0/" rel="tag">阿里云 - 实习</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/" rel="tag">实习笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag">阿里云</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -396,6 +397,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> [foo, bar] = returnMultipleValues();</span><br><span class="line"></span><br><span class="line"><span class="comment">//用一个对象作为容器并为返回值命名</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        foo: <span class="number">1</span>,</span><br><span class="line">        bar: <span class="number">2</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">var</span> &#123; foo, bar &#125; = returnMultipleValues();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用CPS变换：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnMultipleValues</span>(<span class="params">k</span>) </span>&#123;</span><br><span class="line">      k(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line">returnMultipleValues(<span class="function">(<span class="params">foo, bar</span>) =&gt;</span> ...);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
+<p>解构赋值常见注意事项：<a href="https://blog.csdn.net/huhu" target="_blank" rel="noopener">https://blog.csdn.net/huhu</a>_ </p>
 </blockquote>
 <p><strong>不定参数（…）</strong></p>
 <ul>
@@ -464,6 +466,8 @@
 </ul>
 <p>事件循环是js实现异步的一种方法，也是js的执行机制。</p>
 <blockquote>
+<p>感谢掘金大佬解析：<a href="https://juejin.im/post/59e85eebf265da430d571f89" target="_blank" rel="noopener">https://juejin.im/post/59e85eebf265da430d571f89</a> </p>
+<p>Node循环机制解析：<a href="https://segmentfault.com/a/1190000013102056" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013102056</a> </p>
 </blockquote>
 <p><strong>4.题目描述：</strong>关于浏览器网络知识，以下说法正确的是（不定选型）</p>
 <p>​    <strong>题目答案：</strong></p>
@@ -579,7 +583,7 @@
         <p><span>本文标题:</span><a href="/2020/03/14/aliTest/">阿里云达摩院实习笔试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
         <p><span>发布时间:</span>2020-03-14, 00:00:00</p>
-        <p><span>最后更新:</span>2020-03-14, 12:20:00</p>
+        <p><span>最后更新:</span>2020-03-14, 12:42:40</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/14/aliTest/" title="阿里云达摩院实习笔试题">https://guoxiangguoxiang.github.io/2020/03/14/aliTest/</a>
             <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/03/14/aliTest/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
