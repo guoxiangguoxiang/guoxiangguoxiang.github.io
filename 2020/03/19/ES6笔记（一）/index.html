@@ -14,15 +14,18 @@
 <meta name="author" content="zhanzhan" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="zhanzhan&#39;s blog">
-<meta property="og:url" content="https://guoxiangguoxiang.github.io/index.html">
+<meta name="description" content="ES6配置环境@babel&#x2F;register@babel&#x2F;register模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、 .es和.es6后缀名的文件，就会先用 Babel 进行转码。 1$ npm install --save-dev @babel&#x2F;register  使用时，必须首先加载@babel&#x2F;register。  123&#x2F;&#x2F; ind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6笔记(一)">
+<meta property="og:url" content="https://guoxiangguoxiang.github.io/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="zhanzhan&#39;s blog">
+<meta property="og:description" content="ES6配置环境@babel&#x2F;register@babel&#x2F;register模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、 .es和.es6后缀名的文件，就会先用 Babel 进行转码。 1$ npm install --save-dev @babel&#x2F;register  使用时，必须首先加载@babel&#x2F;register。  123&#x2F;&#x2F; ind">
+<meta property="article:published_time" content="2020-03-19T05:49:50.000Z">
+<meta property="article:modified_time" content="2020-03-20T10:43:09.432Z">
 <meta property="article:author" content="zhanzhan">
+<meta property="article:tag" content="ES6">
+<meta property="article:tag" content="ECMAScript6难点记录">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -53,13 +56,11 @@
 
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>zhanzhan&#39;s blog</title>
+<title>ES6笔记(一) | zhanzhan&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -68,8 +69,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -265,78 +266,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-zhanzhan-planning" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/13/zhanzhan-planning/" class="article-date">
-      <time datetime="2020-03-12T16:00:00.000Z" itemprop="datePublished">2020-03-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/13/zhanzhan-planning/">奥特曼打小怪兽</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>写给自己：</strong>不是因为我对这个世界多失望，而是我对这个世界有太多的期望。</p>
-<p>​        我要一条一条的干完每条计划，就像奥特曼一级一级的打怪兽一样。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <a class="">置顶</a>
-        </div>
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A0%E6%B2%B9%E8%BF%9B%E5%A4%A7%E5%8E%82/" rel="tag">加油进大厂</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%8B%E6%8B%9B%E8%AE%A1%E5%88%92/" rel="tag">秋招计划</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/13/zhanzhan-planning/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ES6笔记（一）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ES6笔记（一）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
@@ -354,12 +284,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">ES6笔记(一)</a>
+    <h1 class="article-title" itemprop="name">
+      ES6笔记(一)
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAScript6%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/" rel="tag">ECMAScript6难点记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -816,87 +757,85 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAScript6%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/" rel="tag">ECMAScript6难点记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aliTest" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/14/aliTest/" class="article-date">
-      <time datetime="2020-03-13T16:00:00.000Z" itemprop="datePublished">2020-03-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/14/aliTest/">阿里云达摩院实习笔试题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>选择题：</strong>10        <strong>编程题：</strong>13        <strong>概述题：</strong>3        <strong>开放题：</strong>1</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/" rel="tag">实习笔试</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag">阿里云</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/14/aliTest/#more">阅读全文 >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">ES6笔记(一)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
+        <p><span>发布时间:</span>2020-03-19, 13:49:50</p>
+        <p><span>最后更新:</span>2020-03-20, 18:43:09</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="ES6笔记(一)">https://guoxiangguoxiang.github.io/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-    
-  </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/03/14/aliTest/">
+                    阿里云达摩院实习笔试题
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6配置环境"><span class="toc-number">1.</span> <span class="toc-text">ES6配置环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#babel-register"><span class="toc-number">1.1.</span> <span class="toc-text">@babel&#x2F;register</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#polyfill"><span class="toc-number">1.2.</span> <span class="toc-text">polyfill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器环境"><span class="toc-number">1.3.</span> <span class="toc-text">浏览器环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let和const"><span class="toc-number">2.</span> <span class="toc-text">let和const</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#let"><span class="toc-number">2.1.</span> <span class="toc-text">let</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#块级作用域"><span class="toc-number">2.2.</span> <span class="toc-text">块级作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#块级作用域与函数声明-难点"><span class="toc-number">2.3.</span> <span class="toc-text">块级作用域与函数声明(难点)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#const命令"><span class="toc-number">2.4.</span> <span class="toc-text">const命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#顶层对象的属性"><span class="toc-number">2.5.</span> <span class="toc-text">顶层对象的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#globalThis对象"><span class="toc-number">2.6.</span> <span class="toc-text">globalThis对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的解构赋值"><span class="toc-number">3.</span> <span class="toc-text">变量的解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认值"><span class="toc-number">3.1.</span> <span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的解构赋值"><span class="toc-number">3.2.</span> <span class="toc-text">对象的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串的解构赋值"><span class="toc-number">3.3.</span> <span class="toc-text">字符串的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数值和布尔值的解构赋值"><span class="toc-number">3.4.</span> <span class="toc-text">数值和布尔值的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数参数的解构赋值"><span class="toc-number">3.5.</span> <span class="toc-text">函数参数的解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#圆括号问题（重要）"><span class="toc-number">3.6.</span> <span class="toc-text">圆括号问题（重要）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可以使用圆括号的情况"><span class="toc-number">3.7.</span> <span class="toc-text">可以使用圆括号的情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用途"><span class="toc-number">3.8.</span> <span class="toc-text">用途</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的扩展"><span class="toc-number">4.</span> <span class="toc-text">字符串的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-字符的Unicode表示法"><span class="toc-number">4.1.</span> <span class="toc-text">1.字符的Unicode表示法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-字符串的遍历器接口"><span class="toc-number">4.2.</span> <span class="toc-text">2.字符串的遍历器接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-直接输入-U-2028-和-U-2029"><span class="toc-number">4.3.</span> <span class="toc-text">3.直接输入 U+2028 和 U+2029</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-JSON-stringify-的改造"><span class="toc-number">4.4.</span> <span class="toc-text">4.JSON.stringify()的改造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-模板字符串"><span class="toc-number">4.5.</span> <span class="toc-text">5.模板字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-模板编译"><span class="toc-number">4.6.</span> <span class="toc-text">6.模板编译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-标签模板"><span class="toc-number">4.7.</span> <span class="toc-text">7.标签模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-模板字符串的限制"><span class="toc-number">4.8.</span> <span class="toc-text">8.模板字符串的限制</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"ES6笔记(一)　| zhanzhan's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -904,9 +843,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/03/14/aliTest/" title="下一篇: 阿里云达摩院实习笔试题">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/19/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">ES6笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/aliTest/">阿里云达摩院实习笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/zhanzhan-planning/">奥特曼打小怪兽</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
