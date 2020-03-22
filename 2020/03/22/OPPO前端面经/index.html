@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhanzhan" />
+
+
+
+<meta name="description" content="美团        百度        OPPO        拼多多        腾讯        阿里        有赞        360">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客前端面经">
+<meta property="og:url" content="https://guoxiangguoxiang.github.io/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/index.html">
+<meta property="og:site_name" content="zhanzhan&#39;s blog">
+<meta property="og:description" content="美团        百度        OPPO        拼多多        腾讯        阿里        有赞        360">
+<meta property="article:published_time" content="2020-03-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-22T06:20:59.135Z">
+<meta property="article:author" content="zhanzhan">
+<meta property="article:tag" content="牛客取经">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="zhanzhan&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>牛客前端面经 | zhanzhan&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/zhanzhan.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhanzhan</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/289463414@qq.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa bilibili" href="/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/" rel="tag">ECMAScript6难点记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A0%E6%B2%B9%E8%BF%9B%E5%A4%A7%E5%8E%82/" rel="tag">加油进大厂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/" rel="tag">实习笔试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E5%8F%96%E7%BB%8F/" rel="tag">牛客取经</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%8B%E6%8B%9B%E8%AE%A1%E5%88%92/" rel="tag">秋招计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag">阿里云</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/" target="_blank" rel="noopener">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://guoxiangguoxiang.github.io">zhanzhan</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhanzhan</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/zhanzhan.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhanzhan</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/289463414@qq.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-OPPO前端面经" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/" class="article-date">
+      <time datetime="2020-03-21T16:00:00.000Z" itemprop="datePublished">2020-03-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      牛客前端面经
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E5%8F%96%E7%BB%8F/" rel="tag">牛客取经</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>美团        百度        OPPO        拼多多        腾讯        阿里        有赞        360</strong></p>
+<a id="more"></a>
+
+<h3 id="OPPO前端面经"><a href="#OPPO前端面经" class="headerlink" title="OPPO前端面经"></a>OPPO前端面经</h3><h4 id="1-javascript中的数据类型"><a href="#1-javascript中的数据类型" class="headerlink" title="1. javascript中的数据类型"></a>1. javascript中的数据类型</h4><h4 id="2-原始值和引用值的区别"><a href="#2-原始值和引用值的区别" class="headerlink" title="2. 原始值和引用值的区别"></a>2. 原始值和引用值的区别</h4><h4 id="3-怎么去判断一个数租的类型"><a href="#3-怎么去判断一个数租的类型" class="headerlink" title="3. 怎么去判断一个数租的类型"></a>3. 怎么去判断一个数租的类型</h4><h4 id="4-怎么创建一个函数"><a href="#4-怎么创建一个函数" class="headerlink" title="4. 怎么创建一个函数"></a>4. 怎么创建一个函数</h4><h4 id="5-分别说一下原型链和作用域链"><a href="#5-分别说一下原型链和作用域链" class="headerlink" title="5. 分别说一下原型链和作用域链"></a>5. 分别说一下原型链和作用域链</h4><h4 id="6-防抖和节流的区别"><a href="#6-防抖和节流的区别" class="headerlink" title="6. 防抖和节流的区别"></a>6. 防抖和节流的区别</h4><h4 id="7-setTimeout相关题目，判断输出顺序"><a href="#7-setTimeout相关题目，判断输出顺序" class="headerlink" title="7. setTimeout相关题目，判断输出顺序"></a>7. setTimeout相关题目，判断输出顺序</h4><h4 id="8-eventLoop"><a href="#8-eventLoop" class="headerlink" title="8. eventLoop"></a>8. eventLoop</h4><h4 id="9-BFC的理解"><a href="#9-BFC的理解" class="headerlink" title="9. BFC的理解"></a>9. BFC的理解</h4><h4 id="10-HTTP2-0-相对于-HTTP-1-1的区别"><a href="#10-HTTP2-0-相对于-HTTP-1-1的区别" class="headerlink" title="10. HTTP2.0 相对于 HTTP 1.1的区别"></a>10. HTTP2.0 相对于 HTTP 1.1的区别</h4><h4 id="11-304代表的含义"><a href="#11-304代表的含义" class="headerlink" title="11. 304代表的含义"></a>11. 304代表的含义</h4><h4 id="12-301和302的区别，即永久性重定向和暂时性重定向之间的区别"><a href="#12-301和302的区别，即永久性重定向和暂时性重定向之间的区别" class="headerlink" title="12. 301和302的区别，即永久性重定向和暂时性重定向之间的区别"></a>12. 301和302的区别，即永久性重定向和暂时性重定向之间的区别</h4><h4 id="13-301和302对于客户端或者浏览器会造成什么样的影响与区别"><a href="#13-301和302对于客户端或者浏览器会造成什么样的影响与区别" class="headerlink" title="13. 301和302对于客户端或者浏览器会造成什么样的影响与区别"></a>13. 301和302对于客户端或者浏览器会造成什么样的影响与区别</h4><h3 id="百度智能云前端面经"><a href="#百度智能云前端面经" class="headerlink" title="百度智能云前端面经"></a>百度智能云前端面经</h3><h4 id="1-项目前端方面引用技术"><a href="#1-项目前端方面引用技术" class="headerlink" title="1. 项目前端方面引用技术"></a>1. 项目前端方面引用技术</h4><h4 id="2-React的生命周期"><a href="#2-React的生命周期" class="headerlink" title="2. React的生命周期"></a>2. React的生命周期</h4><h4 id="3-React的虚拟DOM"><a href="#3-React的虚拟DOM" class="headerlink" title="3. React的虚拟DOM"></a>3. React的虚拟DOM</h4><h4 id="4-事件循环（EventLoop）（二次考到！！！）"><a href="#4-事件循环（EventLoop）（二次考到！！！）" class="headerlink" title="4. 事件循环（EventLoop）（二次考到！！！）"></a>4. 事件循环（EventLoop）<code>（二次考到！！！）</code></h4><h4 id="5-解构赋值"><a href="#5-解构赋值" class="headerlink" title="5. 解构赋值"></a>5. 解构赋值</h4><h4 id="6-箭头函数"><a href="#6-箭头函数" class="headerlink" title="6. 箭头函数"></a>6. 箭头函数</h4><h4 id="7-Promise（写一个promise的实例）"><a href="#7-Promise（写一个promise的实例）" class="headerlink" title="7. Promise（写一个promise的实例）"></a>7. Promise（写一个promise的实例）</h4><h4 id="8-写Promise-all的实现源码"><a href="#8-写Promise-all的实现源码" class="headerlink" title="8. 写Promise.all的实现源码"></a>8. 写Promise.all的实现源码</h4><h4 id="9-跨域及实现的方式，及比较"><a href="#9-跨域及实现的方式，及比较" class="headerlink" title="9. 跨域及实现的方式，及比较"></a>9. 跨域及实现的方式，及比较</h4><h4 id="10-同源策略在浏览器具体的表现"><a href="#10-同源策略在浏览器具体的表现" class="headerlink" title="10. 同源策略在浏览器具体的表现"></a>10. 同源策略在浏览器具体的表现</h4><h4 id="11-回流与重绘，以及如何避免"><a href="#11-回流与重绘，以及如何避免" class="headerlink" title="11. 回流与重绘，以及如何避免"></a>11. 回流与重绘，以及如何避免</h4><h4 id="12-浏览器的缓存机制"><a href="#12-浏览器的缓存机制" class="headerlink" title="12. 浏览器的缓存机制"></a>12. 浏览器的缓存机制</h4><h4 id="13-介绍强缓存与协商缓存"><a href="#13-介绍强缓存与协商缓存" class="headerlink" title="13. 介绍强缓存与协商缓存"></a>13. 介绍强缓存与协商缓存</h4><h4 id="14-对前端工程化方面的理解"><a href="#14-对前端工程化方面的理解" class="headerlink" title="14. 对前端工程化方面的理解"></a>14. 对前端工程化方面的理解</h4><h4 id="15-防抖和节流的区别和防抖代码实现（二次考到）"><a href="#15-防抖和节流的区别和防抖代码实现（二次考到）" class="headerlink" title="15. 防抖和节流的区别和防抖代码实现（二次考到）"></a>15. 防抖和节流的区别和防抖代码实现<code>（二次考到）</code></h4><h3 id="网易前端面经"><a href="#网易前端面经" class="headerlink" title="网易前端面经"></a>网易前端面经</h3><h4 id="1-实现一个九宫格布局（不知宽高的情况），手撸实现"><a href="#1-实现一个九宫格布局（不知宽高的情况），手撸实现" class="headerlink" title="1. 实现一个九宫格布局（不知宽高的情况），手撸实现"></a>1. 实现一个九宫格布局（不知宽高的情况），手撸实现</h4><h4 id="2-javascript的数据类型-二次考到"><a href="#2-javascript的数据类型-二次考到" class="headerlink" title="2. javascript的数据类型(二次考到)"></a>2. javascript的数据类型<code>(二次考到)</code></h4><h4 id="3-javascript数据类型判断方式typeof、Object-prototype-toString-call-、instanceof的异同"><a href="#3-javascript数据类型判断方式typeof、Object-prototype-toString-call-、instanceof的异同" class="headerlink" title="3. javascript数据类型判断方式typeof、Object.prototype.toString.call()、instanceof的异同"></a>3. javascript数据类型判断方式typeof、Object.prototype.toString.call()、instanceof的异同</h4><h4 id="4-闭包，闭包为什么会导致作用域链不释放"><a href="#4-闭包，闭包为什么会导致作用域链不释放" class="headerlink" title="4. 闭包，闭包为什么会导致作用域链不释放"></a>4. 闭包，闭包为什么会导致作用域链不释放</h4><h4 id="5-用javascript实现Stack与Queue"><a href="#5-用javascript实现Stack与Queue" class="headerlink" title="5. 用javascript实现Stack与Queue"></a>5. 用javascript实现Stack与Queue</h4><h4 id="6-实现为一组元素添加点击事件，获得每一个元素的UID"><a href="#6-实现为一组元素添加点击事件，获得每一个元素的UID" class="headerlink" title="6. 实现为一组元素添加点击事件，获得每一个元素的UID"></a>6. 实现为一组元素添加点击事件，获得每一个元素的UID</h4><p>（涉及DOM操作中的getElementByclassName、addEventListener与onClick的比较选择，以及getAttribute的使用）</p>
+<h4 id="7-介绍Promise"><a href="#7-介绍Promise" class="headerlink" title="7. 介绍Promise"></a>7. 介绍Promise</h4><h4 id="8-异步相关的输出判断"><a href="#8-异步相关的输出判断" class="headerlink" title="8. 异步相关的输出判断"></a>8. 异步相关的输出判断</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">        resolve(<span class="string">'x'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line">p1.then(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="number">1</span>))</span><br><span class="line"><span class="comment">// 2 3 4 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="拼多多前端面经"><a href="#拼多多前端面经" class="headerlink" title="拼多多前端面经"></a>拼多多前端面经</h3><h4 id="1-做题：找到一个数组的第二大的数字"><a href="#1-做题：找到一个数组的第二大的数字" class="headerlink" title="1. 做题：找到一个数组的第二大的数字"></a>1. 做题：找到一个数组的第二大的数字</h4><p>涉及到特殊情况的考虑、数组去重复、多种方法的实现（最后优化到O(n)的复杂度）  </p>
+<h4 id="2-ES6-中的Promise-第二次考到"><a href="#2-ES6-中的Promise-第二次考到" class="headerlink" title="2. ES6 中的Promise  (第二次考到)"></a>2. ES6 中的Promise  <code>(第二次考到)</code></h4><p>问到Promise的then和catch，以及Promise的API，finally和done  </p>
+<h4 id="3-ES6中的数组API"><a href="#3-ES6中的数组API" class="headerlink" title="3. ES6中的数组API"></a>3. ES6中的数组API</h4><h4 id="4-ES6的数组API，forEach"><a href="#4-ES6的数组API，forEach" class="headerlink" title="4. ES6的数组API，forEach"></a>4. ES6的数组API，forEach</h4><h4 id="5-介绍for…of、for…in、forEach的区别"><a href="#5-介绍for…of、for…in、forEach的区别" class="headerlink" title="5. 介绍for…of、for…in、forEach的区别"></a>5. 介绍for…of、for…in、forEach的区别</h4><h4 id="6-数组操作的API的map和reduce的区别"><a href="#6-数组操作的API的map和reduce的区别" class="headerlink" title="6. 数组操作的API的map和reduce的区别"></a>6. 数组操作的API的map和reduce的区别</h4><h4 id="7-项目的实现"><a href="#7-项目的实现" class="headerlink" title="7. 项目的实现"></a>7. 项目的实现</h4><h4 id="8-项目中Node的使用"><a href="#8-项目中Node的使用" class="headerlink" title="8. 项目中Node的使用"></a>8. 项目中Node的使用</h4><h4 id="9-JS的DOM操作知识点-第二次考到"><a href="#9-JS的DOM操作知识点-第二次考到" class="headerlink" title="9. JS的DOM操作知识点(第二次考到)"></a>9. JS的DOM操作知识点<code>(第二次考到)</code></h4><p>appendChild()如果出现在循环中，如循环十次会产生十个新的节点还是就产生一个，为什么</p>
+<h4 id="10-介绍React的特点"><a href="#10-介绍React的特点" class="headerlink" title="10. 介绍React的特点"></a>10. 介绍React的特点</h4><h4 id="11-react对于项目的选型考虑（为啥用React）"><a href="#11-react对于项目的选型考虑（为啥用React）" class="headerlink" title="11. react对于项目的选型考虑（为啥用React）"></a>11. react对于项目的选型考虑（为啥用React）</h4><h4 id="12-react的生命周期"><a href="#12-react的生命周期" class="headerlink" title="12. react的生命周期"></a>12. react的生命周期</h4><h4 id="13-React的props和state的区别"><a href="#13-React的props和state的区别" class="headerlink" title="13. React的props和state的区别"></a>13. React的props和state的区别</h4><h4 id="14-React如何实现父子组件的传值"><a href="#14-React如何实现父子组件的传值" class="headerlink" title="14. React如何实现父子组件的传值"></a>14. React如何实现父子组件的传值</h4><h4 id="15-React如何实现任意两个组件之间的传值"><a href="#15-React如何实现任意两个组件之间的传值" class="headerlink" title="15. React如何实现任意两个组件之间的传值"></a>15. React如何实现任意两个组件之间的传值</h4><p> （介绍了Redux，被问到还有没有其他方法）</p>
+<h4 id="16-介绍Redux"><a href="#16-介绍Redux" class="headerlink" title="16. 介绍Redux"></a>16. 介绍Redux</h4><p> （提到MVC、Flux、Redux流程）</p>
+<h4 id="17-Redux中的action如果是一个异步的操作的话，如何解决"><a href="#17-Redux中的action如果是一个异步的操作的话，如何解决" class="headerlink" title="17. Redux中的action如果是一个异步的操作的话，如何解决"></a>17. Redux中的action如果是一个异步的操作的话，如何解决</h4><p>（提到的Redux-thunk，但是没怎么实践过，讲的不深入）</p>
+<h4 id="18-撕代码：一个整型数组，求任意三个元素和为0的集合，不能重复。"><a href="#18-撕代码：一个整型数组，求任意三个元素和为0的集合，不能重复。" class="headerlink" title="18. 撕代码：一个整型数组，求任意三个元素和为0的集合，不能重复。"></a>18. 撕代码：一个整型数组，求任意三个元素和为0的集合，不能重复。</h4><p> （如[-1, 0, 1, 2]，有[-1, 1, 0]、[0, 0, 0]、[-1, -1, 2]）</p>
+<h4 id="19-介绍箭头函数（二次考到）"><a href="#19-介绍箭头函数（二次考到）" class="headerlink" title="19. 介绍箭头函数（二次考到）"></a>19. 介绍箭头函数<code>（二次考到）</code></h4><h4 id="20-假如一个class里有箭头函数与function，他们在调用的时候this有什么区别"><a href="#20-假如一个class里有箭头函数与function，他们在调用的时候this有什么区别" class="headerlink" title="20. 假如一个class里有箭头函数与function，他们在调用的时候this有什么区别"></a>20. 假如一个class里有箭头函数与function，他们在调用的时候this有什么区别</h4><h4 id="21-介绍flex布局，说说align-items和align-content的区别"><a href="#21-介绍flex布局，说说align-items和align-content的区别" class="headerlink" title="21. 介绍flex布局，说说align-items和align-content的区别"></a>21. 介绍flex布局，说说align-items和align-content的区别</h4><h3 id="腾讯前端面经"><a href="#腾讯前端面经" class="headerlink" title="腾讯前端面经"></a>腾讯前端面经</h3><h4 id="1-算法题："><a href="#1-算法题：" class="headerlink" title="1. 算法题："></a>1. 算法题：</h4><p>写一个算法，随机生成n个大小在[a,b]范围内（其中b&gt;=a）的整数，并对其进行排序，返回原序列和排序后的序列</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createRandom</span>(<span class="params">n, a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> range = b - a;</span><br><span class="line">    <span class="keyword">var</span> unsortedArr = [];</span><br><span class="line">    <span class="keyword">var</span> sortedArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i ++) &#123;</span><br><span class="line">        <span class="keyword">let</span> rand = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * range) + a;</span><br><span class="line">        unsortedArr.push(rand);</span><br><span class="line">        sortedArr.push(rand);</span><br><span class="line">    &#125;;</span><br><span class="line">    sortedArr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;<span class="keyword">return</span> a - b&#125;);</span><br><span class="line">    <span class="keyword">return</span> [unsortedArr, sortedArr]</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 这里使用round的话，会让你输出的数字的概率是否均等？如果不均等，怎么改？</span></span><br><span class="line"><span class="comment">// 使用Math.floor和Math.ceil似乎都不行</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-状态码的使用情况。状态码301与302的区别-二次考到"><a href="#2-状态码的使用情况。状态码301与302的区别-二次考到" class="headerlink" title="2. 状态码的使用情况。状态码301与302的区别(二次考到)"></a>2. 状态码的使用情况。状态码301与302的区别<code>(二次考到)</code></h4><h4 id="3-JS基础，undefined和null的区别"><a href="#3-JS基础，undefined和null的区别" class="headerlink" title="3. JS基础，undefined和null的区别"></a>3. JS基础，undefined和null的区别</h4><h4 id="4-typeof-null-和-typeof-undefined-分别返回什么"><a href="#4-typeof-null-和-typeof-undefined-分别返回什么" class="headerlink" title="4. typeof(null) 和 typeof(undefined)分别返回什么"></a>4. typeof(null) 和 typeof(undefined)分别返回什么</h4><h4 id="5-正则表达式"><a href="#5-正则表达式" class="headerlink" title="5. 正则表达式"></a>5. 正则表达式</h4><h4 id="6-String的常用API"><a href="#6-String的常用API" class="headerlink" title="6. String的常用API"></a>6. String的常用API</h4><h4 id="7-parseInt-071-和parseInt-“071”-的输出"><a href="#7-parseInt-071-和parseInt-“071”-的输出" class="headerlink" title="7. parseInt(071)和parseInt(“071”)的输出"></a>7. parseInt(071)和parseInt(“071”)的输出</h4><h4 id="8-项目的服务端如何实现"><a href="#8-项目的服务端如何实现" class="headerlink" title="8. 项目的服务端如何实现"></a>8. 项目的服务端如何实现</h4><h3 id="阿里前端面经"><a href="#阿里前端面经" class="headerlink" title="阿里前端面经"></a>阿里前端面经</h3><h4 id="1-对于可视化的理解，假如设计Echarts的最大最小label的设计思路"><a href="#1-对于可视化的理解，假如设计Echarts的最大最小label的设计思路" class="headerlink" title="1. 对于可视化的理解，假如设计Echarts的最大最小label的设计思路"></a>1. 对于可视化的理解，假如设计Echarts的最大最小label的设计思路</h4><h4 id="2-引申到Math-max的使用，如何一次遍历数组，得到最大最小值"><a href="#2-引申到Math-max的使用，如何一次遍历数组，得到最大最小值" class="headerlink" title="2. 引申到Math.max的使用，如何一次遍历数组，得到最大最小值"></a>2. 引申到Math.max的使用，如何一次遍历数组，得到最大最小值</h4><h4 id="3-Echarts内部设计思路"><a href="#3-Echarts内部设计思路" class="headerlink" title="3. Echarts内部设计思路"></a>3. Echarts内部设计思路</h4><h4 id="4-时序预测ARIMA的原理及为什么要用"><a href="#4-时序预测ARIMA的原理及为什么要用" class="headerlink" title="4. 时序预测ARIMA的原理及为什么要用"></a>4. 时序预测ARIMA的原理及为什么要用</h4><h4 id="5-非线性目标函数的优化中，最优化用的什么算法，及为什么要用（拟牛顿法、模拟退火等应用思路）"><a href="#5-非线性目标函数的优化中，最优化用的什么算法，及为什么要用（拟牛顿法、模拟退火等应用思路）" class="headerlink" title="5. 非线性目标函数的优化中，最优化用的什么算法，及为什么要用（拟牛顿法、模拟退火等应用思路）"></a>5. 非线性目标函数的优化中，最优化用的什么算法，及为什么要用（拟牛顿法、模拟退火等应用思路）</h4><h4 id="6-ES6中的Map、Set和数组的区别-二次考到"><a href="#6-ES6中的Map、Set和数组的区别-二次考到" class="headerlink" title="6. ES6中的Map、Set和数组的区别(二次考到)"></a>6. ES6中的Map、Set和数组的区别<code>(二次考到)</code></h4><h4 id="7-React生命周期-二次考到"><a href="#7-React生命周期-二次考到" class="headerlink" title="7. React生命周期(二次考到)"></a>7. React生命周期<code>(二次考到)</code></h4><h4 id="8-如何理解Redux单向数据流-二次考到"><a href="#8-如何理解Redux单向数据流-二次考到" class="headerlink" title="8. 如何理解Redux单向数据流(二次考到)"></a>8. 如何理解Redux单向数据流<code>(二次考到)</code></h4><h4 id="9-React-Hook了解过吗"><a href="#9-React-Hook了解过吗" class="headerlink" title="9. React Hook了解过吗"></a>9. React Hook了解过吗</h4><h4 id="10-Iterator遍历器实现思路"><a href="#10-Iterator遍历器实现思路" class="headerlink" title="10. Iterator遍历器实现思路"></a>10. Iterator遍历器实现思路</h4><h4 id="11-for-of-for-in-和forEach的区别（二次考到）"><a href="#11-for-of-for-in-和forEach的区别（二次考到）" class="headerlink" title="11. for..of for..in 和forEach的区别（二次考到）"></a>11. for..of for..in 和forEach的区别<code>（二次考到）</code></h4><h3 id="有赞前端面经"><a href="#有赞前端面经" class="headerlink" title="有赞前端面经"></a>有赞前端面经</h3><h4 id="1-JS实现大数相加（算法题）"><a href="#1-JS实现大数相加（算法题）" class="headerlink" title="1. JS实现大数相加（算法题）"></a>1. JS实现大数相加（算法题）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="string">'123456789'</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">'11111111111111111111111111'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> res = <span class="string">""</span></span><br><span class="line">    a = a.split(<span class="string">""</span>);</span><br><span class="line">    b = b.split(<span class="string">""</span>);</span><br><span class="line">    <span class="keyword">while</span> (a.length || b.length || temp) &#123;</span><br><span class="line">        temp += ~~(a.pop()) + ~~(b.pop());</span><br><span class="line">        res = (temp % <span class="number">10</span>) + res;</span><br><span class="line">        temp = temp &gt; <span class="number">9</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(add(a, b));</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-计算时区"><a href="#2-计算时区" class="headerlink" title="2. 计算时区"></a>2. 计算时区</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将一天24小时按每半小划分成48段，我们用一个位图表示选中的时间区间，</span></span><br><span class="line"><span class="comment">// 例如`110000000000000000000000000000000000000000000000`，</span></span><br><span class="line"><span class="comment">// 表示第一个半小时和第二个半小时被选中了，其余时间段都没有被选中，</span></span><br><span class="line"><span class="comment">// 也就是对应00:00~01:00这个时间区间。一个位图中可能有多个不连续的</span></span><br><span class="line"><span class="comment">// 时间区间被选中，例如`110010000000000000000000000000000000000000000000`，</span></span><br><span class="line"><span class="comment">// 表示00:00-1:00和02:00-02:30这两个时间区间被选中了。</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 要求：写一个函数timeBitmapToRanges，将上述规则描述的时间位图转换成一个选中时间区间的数组。</span></span><br><span class="line"><span class="comment">// 示例输入：`"110010000000000000000000000000000000000000000000"`</span></span><br><span class="line"><span class="comment">// 示例输出：`["00:00~01:00", "02:00~02:30"]`</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-CSS的权重，结合实例具体分析"><a href="#3-CSS的权重，结合实例具体分析" class="headerlink" title="3. CSS的权重，结合实例具体分析"></a>3. CSS的权重，结合实例具体分析</h4><h4 id="4-未知宽高的元素居中"><a href="#4-未知宽高的元素居中" class="headerlink" title="4. 未知宽高的元素居中"></a>4. 未知宽高的元素居中</h4><h4 id="5-盒子模型，如果设置width-100px，那么盒子中各个部分的宽度多少"><a href="#5-盒子模型，如果设置width-100px，那么盒子中各个部分的宽度多少" class="headerlink" title="5. 盒子模型，如果设置width=100px，那么盒子中各个部分的宽度多少"></a>5. 盒子模型，如果设置width=100px，那么盒子中各个部分的宽度多少</h4><h4 id="6-如果设置background-color-red，那么盒子模型各个部分的背景是什么情况？"><a href="#6-如果设置background-color-red，那么盒子模型各个部分的背景是什么情况？" class="headerlink" title="6. 如果设置background-color: red，那么盒子模型各个部分的背景是什么情况？"></a>6. 如果设置background-color: red，那么盒子模型各个部分的背景是什么情况？</h4><h4 id="7-CSS的position定位及区别（说到和文档流的关系）"><a href="#7-CSS的position定位及区别（说到和文档流的关系）" class="headerlink" title="7. CSS的position定位及区别（说到和文档流的关系）"></a>7. CSS的position定位及区别（说到和文档流的关系）</h4><h4 id="8-HTTP和HTTPS的区别"><a href="#8-HTTP和HTTPS的区别" class="headerlink" title="8. HTTP和HTTPS的区别"></a>8. HTTP和HTTPS的区别</h4><h4 id="9-闭包（二次考到）"><a href="#9-闭包（二次考到）" class="headerlink" title="9. 闭包（二次考到）"></a>9. 闭包<code>（二次考到）</code></h4><h4 id="10-JS垃圾回收机制"><a href="#10-JS垃圾回收机制" class="headerlink" title="10. JS垃圾回收机制"></a>10. JS垃圾回收机制</h4><h4 id="11-TCP和UDP的区别"><a href="#11-TCP和UDP的区别" class="headerlink" title="11. TCP和UDP的区别"></a>11. TCP和UDP的区别</h4><h4 id="12-进程和线程的区别"><a href="#12-进程和线程的区别" class="headerlink" title="12. 进程和线程的区别"></a>12. 进程和线程的区别</h4><h4 id="13-如果需要对数据进行插入和删除，什么数据结构最快"><a href="#13-如果需要对数据进行插入和删除，什么数据结构最快" class="headerlink" title="13. 如果需要对数据进行插入和删除，什么数据结构最快"></a>13. 如果需要对数据进行插入和删除，什么数据结构最快</h4><h4 id="14-如果还需要考虑数据的可索引性质，什么数据结构最好"><a href="#14-如果还需要考虑数据的可索引性质，什么数据结构最好" class="headerlink" title="14. 如果还需要考虑数据的可索引性质，什么数据结构最好"></a>14. 如果还需要考虑数据的可索引性质，什么数据结构最好</h4><h4 id="15-输入一个URL整个流程介绍"><a href="#15-输入一个URL整个流程介绍" class="headerlink" title="15. 输入一个URL整个流程介绍"></a>15. 输入一个URL整个流程介绍</h4><h4 id="16-DNS解析时，有什么算法和方式减少重复操作"><a href="#16-DNS解析时，有什么算法和方式减少重复操作" class="headerlink" title="16. DNS解析时，有什么算法和方式减少重复操作"></a>16. DNS解析时，有什么算法和方式减少重复操作</h4><h4 id="17-项目中选型的考虑"><a href="#17-项目中选型的考虑" class="headerlink" title="17. 项目中选型的考虑"></a>17. 项目中选型的考虑</h4><h4 id="18-React和Vue的数据流向"><a href="#18-React和Vue的数据流向" class="headerlink" title="18. React和Vue的数据流向"></a>18. React和Vue的数据流向</h4><h4 id="19-React做SPA和使用Router的考虑"><a href="#19-React做SPA和使用Router的考虑" class="headerlink" title="19. React做SPA和使用Router的考虑"></a>19. React做SPA和使用Router的考虑</h4><h4 id="20-React-router怎么实现的？（提到hash）"><a href="#20-React-router怎么实现的？（提到hash）" class="headerlink" title="20. React router怎么实现的？（提到hash）"></a>20. React router怎么实现的？（提到hash）</h4><h4 id="21-箭头函数和一般function的异同-三次考到"><a href="#21-箭头函数和一般function的异同-三次考到" class="headerlink" title="21. 箭头函数和一般function的异同(三次考到)"></a>21. 箭头函数和一般function的异同<code>(三次考到)</code></h4><h4 id="22-Promise-all-如何实现的？口述设计思路（三次考到）"><a href="#22-Promise-all-如何实现的？口述设计思路（三次考到）" class="headerlink" title="22. Promise.all()如何实现的？口述设计思路（三次考到）"></a>22. Promise.all()如何实现的？口述设计思路<code>（三次考到）</code></h4><h4 id="23-call、apply、bind的区别"><a href="#23-call、apply、bind的区别" class="headerlink" title="23. call、apply、bind的区别"></a>23. call、apply、bind的区别</h4><h4 id="24-pure-component介绍（类比纯函数介绍）"><a href="#24-pure-component介绍（类比纯函数介绍）" class="headerlink" title="24. pure component介绍（类比纯函数介绍）"></a>24. pure component介绍（类比纯函数介绍）</h4><h4 id="25-pure-component和React生命周期函数"><a href="#25-pure-component和React生命周期函数" class="headerlink" title="25. pure component和React生命周期函数"></a>25. pure component和React生命周期函数</h4><h4 id="26-shouldComponentUpdate的联系"><a href="#26-shouldComponentUpdate的联系" class="headerlink" title="26. shouldComponentUpdate的联系"></a>26. shouldComponentUpdate的联系</h4><h4 id="27-React-Hook有看过吗"><a href="#27-React-Hook有看过吗" class="headerlink" title="27. React Hook有看过吗"></a>27. React Hook有看过吗</h4><h4 id="28-Cookie"><a href="#28-Cookie" class="headerlink" title="28. Cookie"></a>28. Cookie</h4><h4 id="29-XSS和CSRF的防范"><a href="#29-XSS和CSRF的防范" class="headerlink" title="29. XSS和CSRF的防范"></a>29. XSS和CSRF的防范</h4><h3 id="360前端面经"><a href="#360前端面经" class="headerlink" title="360前端面经"></a>360前端面经</h3><h4 id="1-React-16版本后的新特性"><a href="#1-React-16版本后的新特性" class="headerlink" title="1. React 16版本后的新特性"></a>1. React 16版本后的新特性</h4><h4 id="2-HTTP状态码（三次考到）"><a href="#2-HTTP状态码（三次考到）" class="headerlink" title="2. HTTP状态码（三次考到）"></a>2. HTTP状态码<code>（三次考到）</code></h4><h4 id="3-缓存相关的首部字段"><a href="#3-缓存相关的首部字段" class="headerlink" title="3. 缓存相关的首部字段"></a>3. 缓存相关的首部字段</h4><h4 id="4-TCP和UDP的区别（二次考到）"><a href="#4-TCP和UDP的区别（二次考到）" class="headerlink" title="4. TCP和UDP的区别（二次考到）"></a>4. TCP和UDP的区别<code>（二次考到）</code></h4><h4 id="5-XSS-CSRF攻击及防范-二次考到"><a href="#5-XSS-CSRF攻击及防范-二次考到" class="headerlink" title="5. XSS/CSRF攻击及防范(二次考到)"></a>5. XSS/CSRF攻击及防范<code>(二次考到)</code></h4><h4 id="6-事件委托、冒泡和捕获"><a href="#6-事件委托、冒泡和捕获" class="headerlink" title="6. 事件委托、冒泡和捕获"></a>6. 事件委托、冒泡和捕获</h4><h4 id="7-从事件循环机制来分析异步，异步方法有哪些-二次考到"><a href="#7-从事件循环机制来分析异步，异步方法有哪些-二次考到" class="headerlink" title="7. 从事件循环机制来分析异步，异步方法有哪些(二次考到)"></a>7. 从事件循环机制来分析异步，异步方法有哪些<code>(二次考到)</code></h4><h4 id="8-Web-worker"><a href="#8-Web-worker" class="headerlink" title="8. Web worker"></a>8. Web worker</h4><h4 id="9-原型链介绍-三次考到"><a href="#9-原型链介绍-三次考到" class="headerlink" title="9. 原型链介绍(三次考到)"></a>9. 原型链介绍<code>(三次考到)</code></h4><h4 id="10-margin塌陷"><a href="#10-margin塌陷" class="headerlink" title="10. margin塌陷"></a>10. margin塌陷</h4><h4 id="11-如果用const定义一个对象，那么改变对象中的元素，是否会报错（不会报错）"><a href="#11-如果用const定义一个对象，那么改变对象中的元素，是否会报错（不会报错）" class="headerlink" title="11. 如果用const定义一个对象，那么改变对象中的元素，是否会报错（不会报错）"></a>11. 如果用const定义一个对象，那么改变对象中的元素，是否会报错（不会报错）</h4><h4 id="12-原始值和引用值-二次考到"><a href="#12-原始值和引用值-二次考到" class="headerlink" title="12. 原始值和引用值(二次考到)"></a>12. 原始值和引用值<code>(二次考到)</code></h4><h4 id="13-Promise的内部状态，promise-then-参数和链式调用（四次考到）"><a href="#13-Promise的内部状态，promise-then-参数和链式调用（四次考到）" class="headerlink" title="13. Promise的内部状态，promise.then()参数和链式调用（四次考到）"></a>13. Promise的内部状态，promise.then()参数和链式调用<code>（四次考到）</code></h4><h4 id="14-TypeScript和后端语言接触过吗"><a href="#14-TypeScript和后端语言接触过吗" class="headerlink" title="14. TypeScript和后端语言接触过吗"></a>14. TypeScript和后端语言接触过吗</h4><h4 id="15-如何用TS的特性对你项目进行优化"><a href="#15-如何用TS的特性对你项目进行优化" class="headerlink" title="15. 如何用TS的特性对你项目进行优化"></a>15. 如何用TS的特性对你项目进行优化</h4><h4 id="16-对于前端工程化的理解，Webpack"><a href="#16-对于前端工程化的理解，Webpack" class="headerlink" title="16. 对于前端工程化的理解，Webpack"></a>16. 对于前端工程化的理解，Webpack</h4><h3 id="美团前端面经"><a href="#美团前端面经" class="headerlink" title="美团前端面经"></a>美团前端面经</h3><h4 id="1-SPA为什么需要SSR"><a href="#1-SPA为什么需要SSR" class="headerlink" title="1. SPA为什么需要SSR"></a>1. SPA为什么需要SSR</h4><h4 id="2-骨架屏的实现方式"><a href="#2-骨架屏的实现方式" class="headerlink" title="2. 骨架屏的实现方式"></a>2. 骨架屏的实现方式</h4><h4 id="3-编程题"><a href="#3-编程题" class="headerlink" title="3. 编程题"></a>3. 编程题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 改造下面的代码，使之输出0 - 9，写出你能想到的所有解法。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; <span class="number">10</span>; i++)&#123; </span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="built_in">console</span>.log(i); &#125;, <span class="number">1000</span>) </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i&lt; <span class="number">10</span>; i++)&#123; </span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="built_in">console</span>.log(i); &#125;, <span class="number">1000</span> * i) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-编程题2"><a href="#4-编程题2" class="headerlink" title="4. 编程题2"></a>4. 编程题2</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 编写一个程序将数组扁平化去并除其中重复部分数据，最终得到一个升序且不重复的数组</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> newArr = arr.toString().split(<span class="string">","</span>)</span><br><span class="line">    newArr = [...new <span class="built_in">Set</span>(newArr)];</span><br><span class="line">    newArr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;<span class="keyword">return</span> a - b&#125;)</span><br><span class="line">    <span class="keyword">return</span> newArr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-深拷贝的实现"><a href="#5-深拷贝的实现" class="headerlink" title="5. 深拷贝的实现"></a>5. 深拷贝的实现</h4><h4 id="6-图片的格式分为几种？有什么区别？听过webp吗？"><a href="#6-图片的格式分为几种？有什么区别？听过webp吗？" class="headerlink" title="6. 图片的格式分为几种？有什么区别？听过webp吗？"></a>6. 图片的格式分为几种？有什么区别？听过webp吗？</h4><h4 id="7-CSS3的动画最小间隔多少"><a href="#7-CSS3的动画最小间隔多少" class="headerlink" title="7. CSS3的动画最小间隔多少"></a>7. CSS3的动画最小间隔多少</h4><p>（多数显示器的默认频率是60Hz，每秒刷新60次，最小间隔是16.7ms）</p>
+<h4 id="8-HTTP1-0-到-HTTP2-0-到-HTTP3-分别有哪些革新-四次考到"><a href="#8-HTTP1-0-到-HTTP2-0-到-HTTP3-分别有哪些革新-四次考到" class="headerlink" title="8. HTTP1.0 到 HTTP2.0 到 HTTP3 分别有哪些革新(四次考到)"></a>8. HTTP1.0 到 HTTP2.0 到 HTTP3 分别有哪些革新<code>(四次考到)</code></h4><h4 id="9-网络如何保证不丢包"><a href="#9-网络如何保证不丢包" class="headerlink" title="9. 网络如何保证不丢包"></a>9. 网络如何保证不丢包</h4><h4 id="10-视频用TCP还是UDP，如果用UDP，丢包怎么办"><a href="#10-视频用TCP还是UDP，如果用UDP，丢包怎么办" class="headerlink" title="10. 视频用TCP还是UDP，如果用UDP，丢包怎么办"></a>10. 视频用TCP还是UDP，如果用UDP，丢包怎么办</h4><h4 id="11-客户端和服务端的通信和渲染过程"><a href="#11-客户端和服务端的通信和渲染过程" class="headerlink" title="11. 客户端和服务端的通信和渲染过程"></a>11. 客户端和服务端的通信和渲染过程</h4><h4 id="12-二叉树的中序遍历实现"><a href="#12-二叉树的中序遍历实现" class="headerlink" title="12. 二叉树的中序遍历实现"></a>12. 二叉树的中序遍历实现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Way1. 栈结构实现</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inOrder</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="keyword">var</span> stack = [];</span><br><span class="line">    <span class="keyword">var</span> p = root;</span><br><span class="line">    <span class="keyword">while</span> (p || stack.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (p) &#123;</span><br><span class="line">            stack.push(p);</span><br><span class="line">            p = p.left;</span><br><span class="line">        &#125;</span><br><span class="line">        p = stack.pop();</span><br><span class="line">        res.push(p.node);</span><br><span class="line">        p = p.right</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Way2. 递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inOrderCore</span>(<span class="params">root, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    &#125;</span><br><span class="line">    inOrderCore(root.left, res);</span><br><span class="line">    res.push(root.node);</span><br><span class="line">    inOrderCore(root.right, res);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inOrder2</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    inOrderCore(root, res);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="13-分析递归算法的时间复杂度"><a href="#13-分析递归算法的时间复杂度" class="headerlink" title="13. 分析递归算法的时间复杂度"></a>13. 分析递归算法的时间复杂度</h4><h4 id="14-二叉树的节点为N，那么二叉树的深度为多少，怎么推导的。。（logN）"><a href="#14-二叉树的节点为N，那么二叉树的深度为多少，怎么推导的。。（logN）" class="headerlink" title="14. 二叉树的节点为N，那么二叉树的深度为多少，怎么推导的。。（logN）"></a>14. 二叉树的节点为N，那么二叉树的深度为多少，怎么推导的。。（logN）</h4><h4 id="15-算法实现二叉树深度"><a href="#15-算法实现二叉树深度" class="headerlink" title="15. 算法实现二叉树深度"></a>15. 算法实现二叉树深度</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfs</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> leftDepth = dfs(root.left);</span><br><span class="line">        <span class="keyword">var</span> rightDepth = dfs(root.right);</span><br><span class="line">        <span class="keyword">var</span> childDepth = leftDepth &gt; rightDepth ? leftDepth : rightDepth;</span><br><span class="line">        <span class="keyword">return</span> childDepth + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="16-闭包和JS垃圾回收机制-三次考到"><a href="#16-闭包和JS垃圾回收机制-三次考到" class="headerlink" title="16. 闭包和JS垃圾回收机制(三次考到)"></a>16. 闭包和JS垃圾回收机制<code>(三次考到)</code></h4><h4 id="17-利用闭包实现按列升降序排序函数（0表示升序，1表示降序）"><a href="#17-利用闭包实现按列升降序排序函数（0表示升序，1表示降序）" class="headerlink" title="17. 利用闭包实现按列升降序排序函数（0表示升序，1表示降序）"></a>17. 利用闭包实现按列升降序排序函数（0表示升序，1表示降序）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">listSort</span>(<span class="params">testArr, str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">sortWay</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 比较</span></span><br><span class="line">        <span class="keyword">if</span> (sortWay) &#123;</span><br><span class="line">            testArr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;<span class="keyword">return</span> b[str] - a[str]&#125;)</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            testArr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;<span class="keyword">return</span> a[str] - b[str]&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> testArr</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> testArray = [&#123;<span class="attr">name</span>: <span class="number">1</span>,<span class="attr">age</span>: <span class="number">18</span>,<span class="attr">mobile</span>: <span class="number">123</span>&#125;,&#123;<span class="attr">name</span>: <span class="number">2</span>,<span class="attr">age</span>: <span class="number">19</span>,<span class="attr">mobile</span>: <span class="number">234</span>&#125;,&#123;<span class="attr">name</span>: <span class="number">3</span>,<span class="attr">age</span>: <span class="number">20</span>,<span class="attr">mobile</span>: <span class="number">456</span>&#125;];</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(listSort(testArray, <span class="string">"name"</span>)(<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="18-ES6了解哪些"><a href="#18-ES6了解哪些" class="headerlink" title="18. ES6了解哪些"></a>18. ES6了解哪些</h4><h4 id="19-Generator的-表示什么意思，如果在yield后加-号表示什么"><a href="#19-Generator的-表示什么意思，如果在yield后加-号表示什么" class="headerlink" title="19. Generator的*表示什么意思，如果在yield后加*号表示什么"></a>19. Generator的*表示什么意思，如果在yield后加*号表示什么</h4><h4 id="20-介绍一下BFC-二次考到"><a href="#20-介绍一下BFC-二次考到" class="headerlink" title="20. 介绍一下BFC(二次考到)"></a>20. 介绍一下BFC<code>(二次考到)</code></h4>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/">牛客前端面经</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
+        <p><span>发布时间:</span>2020-03-22, 00:00:00</p>
+        <p><span>最后更新:</span>2020-03-22, 14:20:59</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/" title="牛客前端面经">https://guoxiangguoxiang.github.io/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/03/21/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">
+                    ES6笔记（三）
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OPPO前端面经"><span class="toc-number">1.</span> <span class="toc-text">OPPO前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-javascript中的数据类型"><span class="toc-number">1.1.</span> <span class="toc-text">1. javascript中的数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-原始值和引用值的区别"><span class="toc-number">1.2.</span> <span class="toc-text">2. 原始值和引用值的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-怎么去判断一个数租的类型"><span class="toc-number">1.3.</span> <span class="toc-text">3. 怎么去判断一个数租的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-怎么创建一个函数"><span class="toc-number">1.4.</span> <span class="toc-text">4. 怎么创建一个函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-分别说一下原型链和作用域链"><span class="toc-number">1.5.</span> <span class="toc-text">5. 分别说一下原型链和作用域链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-防抖和节流的区别"><span class="toc-number">1.6.</span> <span class="toc-text">6. 防抖和节流的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-setTimeout相关题目，判断输出顺序"><span class="toc-number">1.7.</span> <span class="toc-text">7. setTimeout相关题目，判断输出顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-eventLoop"><span class="toc-number">1.8.</span> <span class="toc-text">8. eventLoop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-BFC的理解"><span class="toc-number">1.9.</span> <span class="toc-text">9. BFC的理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-HTTP2-0-相对于-HTTP-1-1的区别"><span class="toc-number">1.10.</span> <span class="toc-text">10. HTTP2.0 相对于 HTTP 1.1的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-304代表的含义"><span class="toc-number">1.11.</span> <span class="toc-text">11. 304代表的含义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-301和302的区别，即永久性重定向和暂时性重定向之间的区别"><span class="toc-number">1.12.</span> <span class="toc-text">12. 301和302的区别，即永久性重定向和暂时性重定向之间的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-301和302对于客户端或者浏览器会造成什么样的影响与区别"><span class="toc-number">1.13.</span> <span class="toc-text">13. 301和302对于客户端或者浏览器会造成什么样的影响与区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#百度智能云前端面经"><span class="toc-number">2.</span> <span class="toc-text">百度智能云前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-项目前端方面引用技术"><span class="toc-number">2.1.</span> <span class="toc-text">1. 项目前端方面引用技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-React的生命周期"><span class="toc-number">2.2.</span> <span class="toc-text">2. React的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-React的虚拟DOM"><span class="toc-number">2.3.</span> <span class="toc-text">3. React的虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-事件循环（EventLoop）（二次考到！！！）"><span class="toc-number">2.4.</span> <span class="toc-text">4. 事件循环（EventLoop）（二次考到！！！）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-解构赋值"><span class="toc-number">2.5.</span> <span class="toc-text">5. 解构赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-箭头函数"><span class="toc-number">2.6.</span> <span class="toc-text">6. 箭头函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Promise（写一个promise的实例）"><span class="toc-number">2.7.</span> <span class="toc-text">7. Promise（写一个promise的实例）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-写Promise-all的实现源码"><span class="toc-number">2.8.</span> <span class="toc-text">8. 写Promise.all的实现源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-跨域及实现的方式，及比较"><span class="toc-number">2.9.</span> <span class="toc-text">9. 跨域及实现的方式，及比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-同源策略在浏览器具体的表现"><span class="toc-number">2.10.</span> <span class="toc-text">10. 同源策略在浏览器具体的表现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-回流与重绘，以及如何避免"><span class="toc-number">2.11.</span> <span class="toc-text">11. 回流与重绘，以及如何避免</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-浏览器的缓存机制"><span class="toc-number">2.12.</span> <span class="toc-text">12. 浏览器的缓存机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-介绍强缓存与协商缓存"><span class="toc-number">2.13.</span> <span class="toc-text">13. 介绍强缓存与协商缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-对前端工程化方面的理解"><span class="toc-number">2.14.</span> <span class="toc-text">14. 对前端工程化方面的理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-防抖和节流的区别和防抖代码实现（二次考到）"><span class="toc-number">2.15.</span> <span class="toc-text">15. 防抖和节流的区别和防抖代码实现（二次考到）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网易前端面经"><span class="toc-number">3.</span> <span class="toc-text">网易前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-实现一个九宫格布局（不知宽高的情况），手撸实现"><span class="toc-number">3.1.</span> <span class="toc-text">1. 实现一个九宫格布局（不知宽高的情况），手撸实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-javascript的数据类型-二次考到"><span class="toc-number">3.2.</span> <span class="toc-text">2. javascript的数据类型(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-javascript数据类型判断方式typeof、Object-prototype-toString-call-、instanceof的异同"><span class="toc-number">3.3.</span> <span class="toc-text">3. javascript数据类型判断方式typeof、Object.prototype.toString.call()、instanceof的异同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-闭包，闭包为什么会导致作用域链不释放"><span class="toc-number">3.4.</span> <span class="toc-text">4. 闭包，闭包为什么会导致作用域链不释放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-用javascript实现Stack与Queue"><span class="toc-number">3.5.</span> <span class="toc-text">5. 用javascript实现Stack与Queue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-实现为一组元素添加点击事件，获得每一个元素的UID"><span class="toc-number">3.6.</span> <span class="toc-text">6. 实现为一组元素添加点击事件，获得每一个元素的UID</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-介绍Promise"><span class="toc-number">3.7.</span> <span class="toc-text">7. 介绍Promise</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-异步相关的输出判断"><span class="toc-number">3.8.</span> <span class="toc-text">8. 异步相关的输出判断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拼多多前端面经"><span class="toc-number">4.</span> <span class="toc-text">拼多多前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-做题：找到一个数组的第二大的数字"><span class="toc-number">4.1.</span> <span class="toc-text">1. 做题：找到一个数组的第二大的数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-ES6-中的Promise-第二次考到"><span class="toc-number">4.2.</span> <span class="toc-text">2. ES6 中的Promise  (第二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-ES6中的数组API"><span class="toc-number">4.3.</span> <span class="toc-text">3. ES6中的数组API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-ES6的数组API，forEach"><span class="toc-number">4.4.</span> <span class="toc-text">4. ES6的数组API，forEach</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-介绍for…of、for…in、forEach的区别"><span class="toc-number">4.5.</span> <span class="toc-text">5. 介绍for…of、for…in、forEach的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-数组操作的API的map和reduce的区别"><span class="toc-number">4.6.</span> <span class="toc-text">6. 数组操作的API的map和reduce的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-项目的实现"><span class="toc-number">4.7.</span> <span class="toc-text">7. 项目的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-项目中Node的使用"><span class="toc-number">4.8.</span> <span class="toc-text">8. 项目中Node的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-JS的DOM操作知识点-第二次考到"><span class="toc-number">4.9.</span> <span class="toc-text">9. JS的DOM操作知识点(第二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-介绍React的特点"><span class="toc-number">4.10.</span> <span class="toc-text">10. 介绍React的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-react对于项目的选型考虑（为啥用React）"><span class="toc-number">4.11.</span> <span class="toc-text">11. react对于项目的选型考虑（为啥用React）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-react的生命周期"><span class="toc-number">4.12.</span> <span class="toc-text">12. react的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-React的props和state的区别"><span class="toc-number">4.13.</span> <span class="toc-text">13. React的props和state的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-React如何实现父子组件的传值"><span class="toc-number">4.14.</span> <span class="toc-text">14. React如何实现父子组件的传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-React如何实现任意两个组件之间的传值"><span class="toc-number">4.15.</span> <span class="toc-text">15. React如何实现任意两个组件之间的传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-介绍Redux"><span class="toc-number">4.16.</span> <span class="toc-text">16. 介绍Redux</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-Redux中的action如果是一个异步的操作的话，如何解决"><span class="toc-number">4.17.</span> <span class="toc-text">17. Redux中的action如果是一个异步的操作的话，如何解决</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-撕代码：一个整型数组，求任意三个元素和为0的集合，不能重复。"><span class="toc-number">4.18.</span> <span class="toc-text">18. 撕代码：一个整型数组，求任意三个元素和为0的集合，不能重复。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-介绍箭头函数（二次考到）"><span class="toc-number">4.19.</span> <span class="toc-text">19. 介绍箭头函数（二次考到）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-假如一个class里有箭头函数与function，他们在调用的时候this有什么区别"><span class="toc-number">4.20.</span> <span class="toc-text">20. 假如一个class里有箭头函数与function，他们在调用的时候this有什么区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-介绍flex布局，说说align-items和align-content的区别"><span class="toc-number">4.21.</span> <span class="toc-text">21. 介绍flex布局，说说align-items和align-content的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#腾讯前端面经"><span class="toc-number">5.</span> <span class="toc-text">腾讯前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法题："><span class="toc-number">5.1.</span> <span class="toc-text">1. 算法题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-状态码的使用情况。状态码301与302的区别-二次考到"><span class="toc-number">5.2.</span> <span class="toc-text">2. 状态码的使用情况。状态码301与302的区别(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-JS基础，undefined和null的区别"><span class="toc-number">5.3.</span> <span class="toc-text">3. JS基础，undefined和null的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-typeof-null-和-typeof-undefined-分别返回什么"><span class="toc-number">5.4.</span> <span class="toc-text">4. typeof(null) 和 typeof(undefined)分别返回什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-正则表达式"><span class="toc-number">5.5.</span> <span class="toc-text">5. 正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-String的常用API"><span class="toc-number">5.6.</span> <span class="toc-text">6. String的常用API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-parseInt-071-和parseInt-“071”-的输出"><span class="toc-number">5.7.</span> <span class="toc-text">7. parseInt(071)和parseInt(“071”)的输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-项目的服务端如何实现"><span class="toc-number">5.8.</span> <span class="toc-text">8. 项目的服务端如何实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阿里前端面经"><span class="toc-number">6.</span> <span class="toc-text">阿里前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-对于可视化的理解，假如设计Echarts的最大最小label的设计思路"><span class="toc-number">6.1.</span> <span class="toc-text">1. 对于可视化的理解，假如设计Echarts的最大最小label的设计思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-引申到Math-max的使用，如何一次遍历数组，得到最大最小值"><span class="toc-number">6.2.</span> <span class="toc-text">2. 引申到Math.max的使用，如何一次遍历数组，得到最大最小值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Echarts内部设计思路"><span class="toc-number">6.3.</span> <span class="toc-text">3. Echarts内部设计思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-时序预测ARIMA的原理及为什么要用"><span class="toc-number">6.4.</span> <span class="toc-text">4. 时序预测ARIMA的原理及为什么要用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-非线性目标函数的优化中，最优化用的什么算法，及为什么要用（拟牛顿法、模拟退火等应用思路）"><span class="toc-number">6.5.</span> <span class="toc-text">5. 非线性目标函数的优化中，最优化用的什么算法，及为什么要用（拟牛顿法、模拟退火等应用思路）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-ES6中的Map、Set和数组的区别-二次考到"><span class="toc-number">6.6.</span> <span class="toc-text">6. ES6中的Map、Set和数组的区别(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-React生命周期-二次考到"><span class="toc-number">6.7.</span> <span class="toc-text">7. React生命周期(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-如何理解Redux单向数据流-二次考到"><span class="toc-number">6.8.</span> <span class="toc-text">8. 如何理解Redux单向数据流(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-React-Hook了解过吗"><span class="toc-number">6.9.</span> <span class="toc-text">9. React Hook了解过吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-Iterator遍历器实现思路"><span class="toc-number">6.10.</span> <span class="toc-text">10. Iterator遍历器实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-for-of-for-in-和forEach的区别（二次考到）"><span class="toc-number">6.11.</span> <span class="toc-text">11. for..of for..in 和forEach的区别（二次考到）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有赞前端面经"><span class="toc-number">7.</span> <span class="toc-text">有赞前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JS实现大数相加（算法题）"><span class="toc-number">7.1.</span> <span class="toc-text">1. JS实现大数相加（算法题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-计算时区"><span class="toc-number">7.2.</span> <span class="toc-text">2. 计算时区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-CSS的权重，结合实例具体分析"><span class="toc-number">7.3.</span> <span class="toc-text">3. CSS的权重，结合实例具体分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-未知宽高的元素居中"><span class="toc-number">7.4.</span> <span class="toc-text">4. 未知宽高的元素居中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-盒子模型，如果设置width-100px，那么盒子中各个部分的宽度多少"><span class="toc-number">7.5.</span> <span class="toc-text">5. 盒子模型，如果设置width&#x3D;100px，那么盒子中各个部分的宽度多少</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-如果设置background-color-red，那么盒子模型各个部分的背景是什么情况？"><span class="toc-number">7.6.</span> <span class="toc-text">6. 如果设置background-color: red，那么盒子模型各个部分的背景是什么情况？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-CSS的position定位及区别（说到和文档流的关系）"><span class="toc-number">7.7.</span> <span class="toc-text">7. CSS的position定位及区别（说到和文档流的关系）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-HTTP和HTTPS的区别"><span class="toc-number">7.8.</span> <span class="toc-text">8. HTTP和HTTPS的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-闭包（二次考到）"><span class="toc-number">7.9.</span> <span class="toc-text">9. 闭包（二次考到）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-JS垃圾回收机制"><span class="toc-number">7.10.</span> <span class="toc-text">10. JS垃圾回收机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-TCP和UDP的区别"><span class="toc-number">7.11.</span> <span class="toc-text">11. TCP和UDP的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-进程和线程的区别"><span class="toc-number">7.12.</span> <span class="toc-text">12. 进程和线程的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-如果需要对数据进行插入和删除，什么数据结构最快"><span class="toc-number">7.13.</span> <span class="toc-text">13. 如果需要对数据进行插入和删除，什么数据结构最快</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-如果还需要考虑数据的可索引性质，什么数据结构最好"><span class="toc-number">7.14.</span> <span class="toc-text">14. 如果还需要考虑数据的可索引性质，什么数据结构最好</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-输入一个URL整个流程介绍"><span class="toc-number">7.15.</span> <span class="toc-text">15. 输入一个URL整个流程介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-DNS解析时，有什么算法和方式减少重复操作"><span class="toc-number">7.16.</span> <span class="toc-text">16. DNS解析时，有什么算法和方式减少重复操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-项目中选型的考虑"><span class="toc-number">7.17.</span> <span class="toc-text">17. 项目中选型的考虑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-React和Vue的数据流向"><span class="toc-number">7.18.</span> <span class="toc-text">18. React和Vue的数据流向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-React做SPA和使用Router的考虑"><span class="toc-number">7.19.</span> <span class="toc-text">19. React做SPA和使用Router的考虑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-React-router怎么实现的？（提到hash）"><span class="toc-number">7.20.</span> <span class="toc-text">20. React router怎么实现的？（提到hash）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-箭头函数和一般function的异同-三次考到"><span class="toc-number">7.21.</span> <span class="toc-text">21. 箭头函数和一般function的异同(三次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-Promise-all-如何实现的？口述设计思路（三次考到）"><span class="toc-number">7.22.</span> <span class="toc-text">22. Promise.all()如何实现的？口述设计思路（三次考到）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-call、apply、bind的区别"><span class="toc-number">7.23.</span> <span class="toc-text">23. call、apply、bind的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-pure-component介绍（类比纯函数介绍）"><span class="toc-number">7.24.</span> <span class="toc-text">24. pure component介绍（类比纯函数介绍）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25-pure-component和React生命周期函数"><span class="toc-number">7.25.</span> <span class="toc-text">25. pure component和React生命周期函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#26-shouldComponentUpdate的联系"><span class="toc-number">7.26.</span> <span class="toc-text">26. shouldComponentUpdate的联系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#27-React-Hook有看过吗"><span class="toc-number">7.27.</span> <span class="toc-text">27. React Hook有看过吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#28-Cookie"><span class="toc-number">7.28.</span> <span class="toc-text">28. Cookie</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#29-XSS和CSRF的防范"><span class="toc-number">7.29.</span> <span class="toc-text">29. XSS和CSRF的防范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#360前端面经"><span class="toc-number">8.</span> <span class="toc-text">360前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-React-16版本后的新特性"><span class="toc-number">8.1.</span> <span class="toc-text">1. React 16版本后的新特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-HTTP状态码（三次考到）"><span class="toc-number">8.2.</span> <span class="toc-text">2. HTTP状态码（三次考到）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-缓存相关的首部字段"><span class="toc-number">8.3.</span> <span class="toc-text">3. 缓存相关的首部字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-TCP和UDP的区别（二次考到）"><span class="toc-number">8.4.</span> <span class="toc-text">4. TCP和UDP的区别（二次考到）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-XSS-CSRF攻击及防范-二次考到"><span class="toc-number">8.5.</span> <span class="toc-text">5. XSS&#x2F;CSRF攻击及防范(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-事件委托、冒泡和捕获"><span class="toc-number">8.6.</span> <span class="toc-text">6. 事件委托、冒泡和捕获</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-从事件循环机制来分析异步，异步方法有哪些-二次考到"><span class="toc-number">8.7.</span> <span class="toc-text">7. 从事件循环机制来分析异步，异步方法有哪些(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Web-worker"><span class="toc-number">8.8.</span> <span class="toc-text">8. Web worker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-原型链介绍-三次考到"><span class="toc-number">8.9.</span> <span class="toc-text">9. 原型链介绍(三次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-margin塌陷"><span class="toc-number">8.10.</span> <span class="toc-text">10. margin塌陷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-如果用const定义一个对象，那么改变对象中的元素，是否会报错（不会报错）"><span class="toc-number">8.11.</span> <span class="toc-text">11. 如果用const定义一个对象，那么改变对象中的元素，是否会报错（不会报错）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-原始值和引用值-二次考到"><span class="toc-number">8.12.</span> <span class="toc-text">12. 原始值和引用值(二次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-Promise的内部状态，promise-then-参数和链式调用（四次考到）"><span class="toc-number">8.13.</span> <span class="toc-text">13. Promise的内部状态，promise.then()参数和链式调用（四次考到）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-TypeScript和后端语言接触过吗"><span class="toc-number">8.14.</span> <span class="toc-text">14. TypeScript和后端语言接触过吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-如何用TS的特性对你项目进行优化"><span class="toc-number">8.15.</span> <span class="toc-text">15. 如何用TS的特性对你项目进行优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-对于前端工程化的理解，Webpack"><span class="toc-number">8.16.</span> <span class="toc-text">16. 对于前端工程化的理解，Webpack</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#美团前端面经"><span class="toc-number">9.</span> <span class="toc-text">美团前端面经</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-SPA为什么需要SSR"><span class="toc-number">9.1.</span> <span class="toc-text">1. SPA为什么需要SSR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-骨架屏的实现方式"><span class="toc-number">9.2.</span> <span class="toc-text">2. 骨架屏的实现方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-编程题"><span class="toc-number">9.3.</span> <span class="toc-text">3. 编程题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-编程题2"><span class="toc-number">9.4.</span> <span class="toc-text">4. 编程题2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-深拷贝的实现"><span class="toc-number">9.5.</span> <span class="toc-text">5. 深拷贝的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-图片的格式分为几种？有什么区别？听过webp吗？"><span class="toc-number">9.6.</span> <span class="toc-text">6. 图片的格式分为几种？有什么区别？听过webp吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-CSS3的动画最小间隔多少"><span class="toc-number">9.7.</span> <span class="toc-text">7. CSS3的动画最小间隔多少</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-HTTP1-0-到-HTTP2-0-到-HTTP3-分别有哪些革新-四次考到"><span class="toc-number">9.8.</span> <span class="toc-text">8. HTTP1.0 到 HTTP2.0 到 HTTP3 分别有哪些革新(四次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-网络如何保证不丢包"><span class="toc-number">9.9.</span> <span class="toc-text">9. 网络如何保证不丢包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-视频用TCP还是UDP，如果用UDP，丢包怎么办"><span class="toc-number">9.10.</span> <span class="toc-text">10. 视频用TCP还是UDP，如果用UDP，丢包怎么办</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-客户端和服务端的通信和渲染过程"><span class="toc-number">9.11.</span> <span class="toc-text">11. 客户端和服务端的通信和渲染过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-二叉树的中序遍历实现"><span class="toc-number">9.12.</span> <span class="toc-text">12. 二叉树的中序遍历实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-分析递归算法的时间复杂度"><span class="toc-number">9.13.</span> <span class="toc-text">13. 分析递归算法的时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-二叉树的节点为N，那么二叉树的深度为多少，怎么推导的。。（logN）"><span class="toc-number">9.14.</span> <span class="toc-text">14. 二叉树的节点为N，那么二叉树的深度为多少，怎么推导的。。（logN）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-算法实现二叉树深度"><span class="toc-number">9.15.</span> <span class="toc-text">15. 算法实现二叉树深度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-闭包和JS垃圾回收机制-三次考到"><span class="toc-number">9.16.</span> <span class="toc-text">16. 闭包和JS垃圾回收机制(三次考到)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-利用闭包实现按列升降序排序函数（0表示升序，1表示降序）"><span class="toc-number">9.17.</span> <span class="toc-text">17. 利用闭包实现按列升降序排序函数（0表示升序，1表示降序）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-ES6了解哪些"><span class="toc-number">9.18.</span> <span class="toc-text">18. ES6了解哪些</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-Generator的-表示什么意思，如果在yield后加-号表示什么"><span class="toc-number">9.19.</span> <span class="toc-text">19. Generator的*表示什么意思，如果在yield后加*号表示什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-介绍一下BFC-二次考到"><span class="toc-number">9.20.</span> <span class="toc-text">20. 介绍一下BFC(二次考到)</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"牛客前端面经　| zhanzhan's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/03/21/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" title="下一篇: ES6笔记（三）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/">牛客前端面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/21/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">ES6笔记（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/20/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">ES6笔记（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/20/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">ES6笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/aliTest/">阿里云达摩院实习笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/zhanzhan-planning/">奥特曼打小怪兽</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2020 zhanzhan
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script type="text/javascript" src="/js/clicklove.js"></script>
+  </div>
+</body>
+</html>
