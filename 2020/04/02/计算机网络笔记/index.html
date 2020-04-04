@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhanzhan" />
+
+
+
+<meta name="description" content="计算机网络体系结构 五层协议应用层：为特定应用程序提供数据传输服务，例如HTTP\DNS等协议。数据单位为报文。 传输层：为进程提供通用数据传输服务，由于应用层协议很多，定义通用的传输层协议就可以支持不断增多的应用层协议。运输层包括两种协议：传输控制协议TCP，提供面向连接、可靠的数据传输服务，数据单位为报文段；用户数据报协议UDP，提供无连接、尽最大努力的数据传输服务，数据单位为用户数据报.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络笔记">
+<meta property="og:url" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="zhanzhan&#39;s blog">
+<meta property="og:description" content="计算机网络体系结构 五层协议应用层：为特定应用程序提供数据传输服务，例如HTTP\DNS等协议。数据单位为报文。 传输层：为进程提供通用数据传输服务，由于应用层协议很多，定义通用的传输层协议就可以支持不断增多的应用层协议。运输层包括两种协议：传输控制协议TCP，提供面向连接、可靠的数据传输服务，数据单位为报文段；用户数据报协议UDP，提供无连接、尽最大努力的数据传输服务，数据单位为用户数据报.">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5C%E5%8D%8F%E8%AE%AE%E5%B1%82.jpg">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CTCPIP%E5%9B%BE.jpg">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CIP%E6%95%B0%E6%8D%AE%E6%8A%A5.jpg">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5C%E4%B8%BB%E6%9C%BA%E5%8F%B7%E5%92%8C%E7%BD%91%E7%BB%9C%E5%8F%B7.jpg">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CARP%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.jpg">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CICMP%E6%8A%A5%E6%96%87.jpg">
+<meta property="og:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.jpg">
+<meta property="article:published_time" content="2020-04-02T08:59:20.000Z">
+<meta property="article:modified_time" content="2020-04-02T14:44:44.162Z">
+<meta property="article:author" content="zhanzhan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5C%E5%8D%8F%E8%AE%AE%E5%B1%82.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="zhanzhan&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>计算机网络笔记 | zhanzhan&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/zhanzhan.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhanzhan</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/289463414@qq.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa bilibili" href="/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/" rel="tag">ECMAScript6难点记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%A2%9D%E5%A4%96%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/" rel="tag">前端额外基础补充</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A0%E6%B2%B9%E8%BF%9B%E5%A4%A7%E5%8E%82/" rel="tag">加油进大厂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/" rel="tag">实习笔试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%91%98%E6%8A%84%E8%87%AA%E7%A5%9E%E4%B8%89%E5%85%83/" rel="tag">摘抄自神三元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E5%8F%96%E7%BB%8F/" rel="tag">牛客取经</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%8B%E6%8B%9B%E8%AE%A1%E5%88%92/" rel="tag">秋招计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag">网络安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" rel="tag">运行机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag">阿里云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93/" rel="tag">页面渲染</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/" target="_blank" rel="noopener">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://guoxiangguoxiang.github.io">zhanzhan</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhanzhan</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/zhanzhan.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhanzhan</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/289463414@qq.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-计算机网络笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" class="article-date">
+      <time datetime="2020-04-02T08:59:20.000Z" itemprop="datePublished">2020-04-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机网络笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <a id="more"></a>
+
+<h3 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h3><p><img src="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5C%E5%8D%8F%E8%AE%AE%E5%B1%82.jpg" alt></p>
+<h4 id="五层协议"><a href="#五层协议" class="headerlink" title="五层协议"></a>五层协议</h4><p><strong>应用层：</strong>为特定应用程序提供数据传输服务，例如HTTP\DNS等协议。数据单位为报文。</p>
+<p><strong>传输层：</strong>为进程提供通用数据传输服务，由于应用层协议很多，定义通用的传输层协议就可以支持不断增多的应用层协议。运输层包括两种协议：传输控制协议TCP，提供面向连接、可靠的数据传输服务，数据单位为报文段；用户数据报协议UDP，提供无连接、尽最大努力的数据传输服务，数据单位为用户数据报.TCP主要提供完整性服务，UDP主要提供及时性服务。</p>
+<p><strong>网络层 ：</strong>为主机提供数据传输服务。而传输层协议是为主机中的进程提供数据传输服务。网络层把传输层传递下来的报文段或者用户数据报封装成分组。</p>
+<p><strong>数据链路层：</strong>网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。</p>
+<p><strong>物理层：</strong>考虑的是怎样在传输媒体上传输数据比特流，而不是指具体的传输媒体。物理层的作用是尽可能屏蔽传输媒体和通信手段的差异，使数据链路层感觉不到这些差异。</p>
+<h4 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h4><p>其中表示层和会话层用途如下：</p>
+<p><strong>表示层：</strong>数据压缩、加密以及数据描述，这使得应用程序不必关心在各台主机中数据内部格式不同的问题。</p>
+<p><strong>会话层：</strong>建立及管理会话。</p>
+<p>五层协议没有表示层和会话层，而是将这些功能留给应用程序开发者处理。</p>
+<h4 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h4><p>它只有四层，相当于五层协议中数据链路层和物理层合并为网络接口层。</p>
+<p>TCP/IP 体系结构不严格遵循 OSI 分层概念，应用层可能会直接使用 IP 层或者网络接口层。</p>
+<p><img src="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CTCPIP%E5%9B%BE.jpg" alt></p>
+<h4 id="数据在各层之间的传递过程"><a href="#数据在各层之间的传递过程" class="headerlink" title="数据在各层之间的传递过程"></a>数据在各层之间的传递过程</h4><p>在<code>向下</code>的过程中，需要<code>添加下层协议</code>所需要的首部或者尾部，而在<code>向上</code>的过程中<code>不断拆开</code>首部和尾部。</p>
+<p><code>路由器只有下面三层协议</code>，因为路由器位于网络核心中，不需要为进程或者应用程序提供服务，因此也就不需要传输层和应用层。</p>
+<h4 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h4><p><strong>封装成帧</strong></p>
+<p>将网络层传下来的分组添加首部和尾部，用于标记帧的开始和结束。</p>
+<p><strong>透明传输</strong></p>
+<p>透明表示一个实际存在的事物看起来好像不存在一样。</p>
+<p>帧使用首部和尾部进行定界，如果帧的数据部分含有和首部尾部相同的内容，那么帧的开始和结束位置就会被错误的判定。需要在数据部分出现首部尾部相同的内容前面插入转义字符。如果数据部分出现转义字符，那么就在转义字符前面再加个转义字符。在接收端进行处理之后可以还原出原始数据。这个过程透明传输的内容是转义字符，用户察觉不到转义字符的存在。</p>
+<p><strong>差错检测</strong></p>
+<p>目前数据链路层广泛使用了循环冗余检验（CRC）来检查比特差错。</p>
+<h5 id="信道分类"><a href="#信道分类" class="headerlink" title="信道分类"></a>信道分类</h5><p><strong>广播信道</strong></p>
+<p>一对多通信，一个节点发送的数据能够被广播信道上所有的节点接收到。所有的节点都在同一个广播信道上发送数据，因此需要有专门的控制方法进行协调，避免发生冲突（冲突也叫碰撞）。主要有两种控制方法进行协调，一个是使用<code>信道复用技术</code>，一是使用<code>CSMA/CD协议</code>。</p>
+<p><strong>点对点信道</strong></p>
+<p>一对一通信。因为不会发生碰撞，因此也比较简单，使用 <code>PPP协议</code>进行控制。</p>
+<h5 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h5><p><strong>频分复用</strong></p>
+<p>频分复用的所有主机在相同的时间占用不同的频率带宽资源。</p>
+<p><strong>时分复用</strong></p>
+<p>时分复用的所有主机在不同的时间占用相同的频率带宽资源。</p>
+<p>使用频分复用和时分复用进行通信，在通信的过程中主机会一直占用一部分信道资源。但是由于计算机数据的突发性质，通信过程没必要一直占用信道资源而不让出给其它用户使用，因此这两种方式对信道的利用率都不高。</p>
+<p><strong>统计时分复用</strong></p>
+<p>是对时分复用的一种改进，不固定每个用户在时分复用帧中的位置，只要有数据就集中起来组成统计时分复用帧然后发送。</p>
+<p><strong>波分复用</strong></p>
+<p><strong>码分复用</strong></p>
+<h5 id="CSMA-CD-协议"><a href="#CSMA-CD-协议" class="headerlink" title="CSMA/CD 协议"></a>CSMA/CD 协议</h5><p>CSMA/CD 表示载波监听多点接入 / 碰撞检测。</p>
+<p><strong>多点接入：</strong>说明这是总线型网络，许多主机以多点的方式连接到总线上。</p>
+<p><strong>载波监听：</strong>每个主机都必须不停地监听信道。在发送前，如果监听到信道正在使用，就必须等待。</p>
+<p><strong>碰撞检测：</strong>在发送中，如果监听到信道已有其它主机正在发送数据，就表示发生了碰撞。虽然每个主机在发送数据之前都已经监听到信道为空闲，但是由于电磁波的传播时延的存在，还是有可能会发生碰撞。</p>
+<h5 id="PPP协议"><a href="#PPP协议" class="headerlink" title="PPP协议"></a>PPP协议</h5><p>互联网用户通常需要连接到某个ISP之后才能接入到互联网，PPP协议是用户计算机和ISP进行通信时所使用的数据链路层协议。</p>
+<p><strong>MAC地址</strong><br>MAC地址是链路层地址，长度为6字节（48位），用于唯一标识网络适配器（网卡）。</p>
+<p>一台主机拥有多少个网络适配器就有多少个MAC地址。例如笔记本电脑普遍存在无线网络适配器和有线网络适配器，因此就有两个MAC地址。</p>
+<p><strong>局域网</strong></p>
+<p>局域网是一种典型的广播信道，主要特点是网络为一个单位所拥有，且地理范围和站点数目均有限。主要有以太网、令牌环网、FDDI 和 ATM 等局域网技术，目前以太网占领着有线局域网市场。按照网络拓扑结构对局域网进行分类：星型，环形，直线型。</p>
+<p><strong>以太网</strong></p>
+<p>以太网是一种星型拓扑结构局域网。</p>
+<p>早期使用集线器进行连接，集线器是一种物理层设备， 作用于比特而不是帧，当一个比特到达接口时，集线器重新生成这个比特，并将其能量强度放大，从而扩大网络的传输距离，之后再将这个比特发送到其它所有接口。如果集线器同时收到两个不同接口的帧，那么就发生了碰撞。</p>
+<p>目前以太网使用交换机替代了集线器，<code>交换机是一种链路层设备，它不会发生碰撞，能根据 MAC 地址进行存储转发。</code></p>
+<p>以太网帧格式：</p>
+<p><strong>类型：</strong>标记上层使用的协议；</p>
+<p><strong>数据：</strong>长度在 46-1500 之间，如果太小则需要填充；</p>
+<p><strong>FCS：</strong>帧检验序列，使用的是 CRC 检验方法；</p>
+<h5 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h5><p>交换机具有自学习能力，学习的是交换表的内容，交换表中存储着 MAC 地址到接口的映射。正是由于这种自学习能力，因此交换机是一种即插即用设备，不需要网络管理员手动配置交换表内容。</p>
+<h5 id="虚拟局域网"><a href="#虚拟局域网" class="headerlink" title="虚拟局域网"></a>虚拟局域网</h5><p>虚拟局域网可以建立与物理位置无关的逻辑组，只有在同一个虚拟局域网中的成员才会收到链路层广播信息。例如下图中 (A1, A2, A3, A4) 属于一个虚拟局域网，A1 发送的广播会被 A2、A3、A4 收到，而其它站点收不到。使用 VLAN 干线连接来建立虚拟局域网，每台交换机上的一个特殊接口被设置为干线接口，以互连 VLAN 交换机。IEEE 定义了一种扩展的以太网帧格式 802.1Q，它在标准以太网帧上加进了 4 字节首部 VLAN 标签，用于表示该帧属于哪一个虚拟局域网。</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>网络层向上只提供简单灵活的、无连接的、尽最大努力交互的数据报服务。使用 IP 协议，可以把异构的物理网络连接起来，使得在网络层看起来好像是一个统一的网络。</p>
+<h5 id="IP数据报格式"><a href="#IP数据报格式" class="headerlink" title="IP数据报格式"></a>IP数据报格式</h5><p><img src="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CIP%E6%95%B0%E6%8D%AE%E6%8A%A5.jpg" alt></p>
+<h5 id="IP-地址编址方式"><a href="#IP-地址编址方式" class="headerlink" title="IP 地址编址方式"></a>IP 地址编址方式</h5><p>IP 地址的编址方式经历了三个历史阶段：<strong>分类</strong>，<strong>子网划分</strong>，<strong>无分类</strong></p>
+<p><strong>分类：</strong>由两部分组成，网络号和主机号，其中不同分类具有不同的网络号长度，并且是固定的。IP地址 ::= {&lt; 网络号 &gt;, &lt; 主机号 &gt;}</p>
+<p><img src="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5C%E4%B8%BB%E6%9C%BA%E5%8F%B7%E5%92%8C%E7%BD%91%E7%BB%9C%E5%8F%B7.jpg" alt></p>
+<p><strong>子网划分</strong><br>通过在主机号字段中拿一部分作为子网号，把两级IP地址划分为三级IP地址。IP地址 ::= {&lt; 网络号 &gt;, &lt; 子网号 &gt;, &lt; 主机号 &gt;}</p>
+<p>要使用子网，必须配置子网掩码。一个 B 类地址的默认子网掩码为 255.255.0.0，如果 B 类地址的子网占两个比特，那么子网掩码为 11111111 11111111 11000000 00000000，也就是255.255.192.0。注意，外部网络看不到子网的存在。</p>
+<p><strong>无分类</strong></p>
+<p><code>无分类编址 CIDR</code>消除了传统 A 类、B 类和 C 类地址以及划分子网的概念，使用网络前缀和主机号来对 IP 地址进行编码，网络前缀的长度可以根据需要变化。</p>
+<p>IP 地址 ::= {&lt; 网络前缀号 &gt;, &lt; 主机号 &gt;}</p>
+<p><code>CIDR的记法</code>上采用在 IP 地址后面加上网络前缀长度的方法，例如 128.14.35.7/20 表示前 20 位为网络前缀。CIDR的地址掩码可以继续称为子网掩码，子网掩码首 1 长度为网络前缀的长度。</p>
+<p>一个CIDR地址块中有很多地址，一个CIDR表示的网络就可以表示原来的很多个网络，并且在路由表中只需要一个路由就可以代替原来的多个路由，减少了路由表项的数量。把这种通过使用网络前缀来减少路由表项的方式称为路由聚合，也称为<strong>构成超网</strong> 。<br>在路由表中的项目由“网络前缀”和“下一跳地址”组成，在查找时可能会得到不止一个匹配结果，应当采用最长前缀匹配来确定应该匹配哪一个。</p>
+<h5 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h5><p>网络层实现主机之间的通信，而链路层实现具体每段链路之间的通信。因此在通信过程中，IP数据报的源地址和目的地址始终不变，而 MAC 地址随着链路的改变而改变。</p>
+<p>ARP 实现由 IP 地址得到 MAC 地址。</p>
+<p>每个主机都有一个 ARP 高速缓存，里面有本局域网上的各主机和路由器的 IP 地址到 MAC 地址的映射表。如果主机 A 知道主机 B 的 IP 地址，但是 ARP 高速缓存中没有该 IP 地址到 MAC 地址的映射，此时主机 A 通过广播的方式发送 ARP 请求分组，主机 B 收到该请求后会发送 ARP 响应分组给主机 A 告知其 MAC 地址，随后主机 A 向其高速缓存中写入主机 B 的 IP 地址到 MAC 地址的映射。</p>
+<p><img src="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CARP%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.jpg" alt></p>
+<h5 id="网际控制报文协议-ICMP"><a href="#网际控制报文协议-ICMP" class="headerlink" title="网际控制报文协议 ICMP"></a>网际控制报文协议 ICMP</h5><p>ICMP 是为了更有效地转发 IP 数据报和提高交付成功的机会。它封装在 IP 数据报中，但是不属于高层协议。</p>
+<p><img src="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CICMP%E6%8A%A5%E6%96%87.jpg" alt></p>
+<p>ICMP 报文分为差错报告报文和询问报文。</p>
+<p><img src="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/D:%5CmyBlog%5Czhanzhan%5Csource_posts%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%5CICMP%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.jpg" alt></p>
+<p><strong>Ping</strong><br>Ping 是 ICMP 的一个重要应用，主要用来测试两台主机之间的连通性。Ping 的原理是通过向目的主机发送 ICMP Echo 请求报文，目的主机收到之后会发送 Echo 回答报文Ping 会根据时间和成功响应的次数估算出数据包往返时间以及丢包率。</p>
+<p><strong>Traceroute</strong></p>
+<p>Traceroute 是 ICMP 的另一个应用，用来跟踪一个分组从源点到终点的路径。Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报，并由目的主机发送终点不可达差错报告报文。</p>
+<p>源主机向目的主机发送一连串的 IP 数据报。第一个数据报 P1 的生存时间 TTL 设置为 1，当 P1 到达路径上的第一个路由器 R1 时，R1 收下它并把 TTL 减 1，此时 TTL 等于 0，R1 就把 P1 丢弃，并向源主机发送一个 ICMP时间超过差错报告报文；</p>
+<p>源主机接着发送第二个数据报 P2，并把 TTL 设置为 2。P2 先到达 R1，R1 收下后把 TTL 减 1 再转发给 R2，R2收下后也把 TTL 减 1，由于此时 TTL 等于 0，R2 就丢弃 P2，并向源主机发送一个 ICMP 时间超过差错报文。</p>
+<p>不断执行这样的步骤，直到最后一个数据报刚刚到达目的主机，主机不转发数据报，也不把TTL值减1。但是因为数据报封装的是无法交付的UDP，因此目的主机要向源主机发送ICMP终点不可达差错报告报文。</p>
+<p>之后源主机知道了到达目的主机所经过的路由器IP地址以及到达每个路由器的往返时间。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/">计算机网络笔记</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
+        <p><span>发布时间:</span>2020-04-02, 16:59:20</p>
+        <p><span>最后更新:</span>2020-04-02, 22:44:44</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="计算机网络笔记">https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/04/04/ES6%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                    ES6面试题
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/04/01/%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/">
+                    项目整理
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机网络体系结构"><span class="toc-number">1.</span> <span class="toc-text">计算机网络体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#五层协议"><span class="toc-number">1.1.</span> <span class="toc-text">五层协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OSI"><span class="toc-number">1.2.</span> <span class="toc-text">OSI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-IP"><span class="toc-number">1.3.</span> <span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据在各层之间的传递过程"><span class="toc-number">1.4.</span> <span class="toc-text">数据在各层之间的传递过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链路层"><span class="toc-number">1.5.</span> <span class="toc-text">链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#信道分类"><span class="toc-number">1.5.1.</span> <span class="toc-text">信道分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信道复用技术"><span class="toc-number">1.5.2.</span> <span class="toc-text">信道复用技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSMA-CD-协议"><span class="toc-number">1.5.3.</span> <span class="toc-text">CSMA&#x2F;CD 协议</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PPP协议"><span class="toc-number">1.5.4.</span> <span class="toc-text">PPP协议</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#交换机"><span class="toc-number">1.5.5.</span> <span class="toc-text">交换机</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#虚拟局域网"><span class="toc-number">1.5.6.</span> <span class="toc-text">虚拟局域网</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络层"><span class="toc-number">1.6.</span> <span class="toc-text">网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IP数据报格式"><span class="toc-number">1.6.1.</span> <span class="toc-text">IP数据报格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IP-地址编址方式"><span class="toc-number">1.6.2.</span> <span class="toc-text">IP 地址编址方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#地址解析协议ARP"><span class="toc-number">1.6.3.</span> <span class="toc-text">地址解析协议ARP</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#网际控制报文协议-ICMP"><span class="toc-number">1.6.4.</span> <span class="toc-text">网际控制报文协议 ICMP</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"计算机网络笔记　| zhanzhan's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2020/04/04/ES6%E9%9D%A2%E8%AF%95%E9%A2%98/" title="上一篇: ES6面试题">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/04/01/%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/" title="下一篇: 项目整理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E7%BC%96%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/">编程面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/">前端三剑客面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E6%A1%86%E6%9E%B6%E9%9D%A2%E8%AF%95%E9%A2%98/">框架面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E8%AF%95%E9%A2%98/">操作系统面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/">计算机网络面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%9D%A2%E8%AF%95%E9%A2%98/">前端性能优化面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/ES6%E9%9D%A2%E8%AF%95%E9%A2%98/">ES6面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/">计算机网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/01/%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/">项目整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/01/ES6%E7%BB%8F%E5%85%B8%E9%A2%98-%E7%96%91%E9%9A%BE%E9%A2%98/">ES6经典题&疑难题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/31/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/">ES6笔记（十三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/31/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">ES6笔记（十二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/31/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">ES6笔记（十一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/30/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%EF%BC%89/">ES6笔记（十）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/29/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B9%9D%EF%BC%89/">ES6笔记（九）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/29/%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F%EF%BC%88%E4%BA%8C%EF%BC%89/">前端面经（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/29/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">前端性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/26/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/">ES6笔记（八）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/25/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/">ES6笔记（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/25/%E5%85%B3%E4%BA%8Ehttp%E5%8D%8F%E8%AE%AE%E5%8D%9A%E5%AE%A2%E6%91%98%E6%8A%84/">关于http协议博客摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/24/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/">ES6笔记（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/23/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/">ES6笔记（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/22/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/">ES6笔记（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/">前端面经（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/21/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">ES6笔记（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/20/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">ES6笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/20/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">ES6笔记（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/aliTest/">阿里云达摩院实习笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/zhanzhan-planning/">奥特曼打小怪兽</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2020 zhanzhan
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script type="text/javascript" src="/js/clicklove.js"></script>
+  </div>
+</body>
+</html>

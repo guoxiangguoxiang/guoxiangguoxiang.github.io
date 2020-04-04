@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhanzhan" />
+
+
+
+<meta name="description" content="CSS        HTML        Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端三剑客面试题">
+<meta property="og:url" content="https://guoxiangguoxiang.github.io/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="zhanzhan&#39;s blog">
+<meta property="og:description" content="CSS        HTML        Javascript">
+<meta property="article:published_time" content="2020-04-04T03:37:32.000Z">
+<meta property="article:modified_time" content="2020-04-04T05:50:37.360Z">
+<meta property="article:author" content="zhanzhan">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="Javascript">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="zhanzhan&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>前端三剑客面试题 | zhanzhan&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/zhanzhan.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhanzhan</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/289463414@qq.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa bilibili" href="/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6%E9%9A%BE%E7%82%B9%E8%AE%B0%E5%BD%95/" rel="tag">ECMAScript6难点记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%A2%9D%E5%A4%96%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/" rel="tag">前端额外基础补充</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A0%E6%B2%B9%E8%BF%9B%E5%A4%A7%E5%8E%82/" rel="tag">加油进大厂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AF%95/" rel="tag">实习笔试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%91%98%E6%8A%84%E8%87%AA%E7%A5%9E%E4%B8%89%E5%85%83/" rel="tag">摘抄自神三元</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E5%8F%96%E7%BB%8F/" rel="tag">牛客取经</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%8B%E6%8B%9B%E8%AE%A1%E5%88%92/" rel="tag">秋招计划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag">网络安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" rel="tag">运行机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag">阿里云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93/" rel="tag">页面渲染</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/" target="_blank" rel="noopener">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://guoxiangguoxiang.github.io">zhanzhan</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhanzhan</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/zhanzhan.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhanzhan</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/289463414@qq.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-前端三剑客面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/" class="article-date">
+      <time datetime="2020-04-04T03:37:32.000Z" itemprop="datePublished">2020-04-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端三剑客面试题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>CSS        HTML        Javascript</strong></p>
+<a id="more"></a>
+
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p><strong>1.题目描述：</strong>CSS position属性，区别</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>2.题目描述：</strong>CSS可继承的属性值（font-size,line-hight）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>3.题目描述：</strong>px、em、rem的区别</p>
+<p>​    <strong>提示：</strong>（em根据当前字体大小转换成px，rem根据根节点html字体大小计算）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>4.题目描述：</strong>vw、vh的用法</p>
+<p>​    <strong>提示：</strong>（按视窗的百分比计算，1vw为窗口的1%，100vw撑满，<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank" rel="noopener">MDN</a>） </p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>5.题目描述：</strong>font-size ，line-height判断</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS */</span></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .p1 &#123;font-size: <span class="number">16</span>px; line-height: <span class="number">32</span>px;&#125;</span><br><span class="line">	.p1<span class="number">-1</span> &#123;font-size: <span class="number">2</span>em;&#125;</span><br><span class="line">	.p1<span class="number">-2</span> &#123;font-size: <span class="number">2</span>em; line-height: <span class="number">2</span>em;&#125;</span><br><span class="line">	.p2 &#123;font-size: <span class="number">16</span>px; line-height: <span class="number">2</span>;&#125;</span><br><span class="line">	.p2<span class="number">-1</span> &#123;font-size: <span class="number">2</span>em;&#125;</span><br><span class="line">	.p2<span class="number">-2</span> &#123;font-size: <span class="number">2</span>em; line-height: <span class="number">2</span>em;&#125;</span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="p1"&gt;    </span></span><br><span class="line"><span class="regexp">    &lt;div class=“p1-1"&gt;1&lt;/</span>div&gt;    </span><br><span class="line">	&lt;div <span class="class"><span class="keyword">class</span></span>=“p1<span class="number">-2</span><span class="string">"&gt;1&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;div class="</span>p2<span class="string">"&gt;    </span></span><br><span class="line"><span class="string">    &lt;div class=“p2-1"</span>&gt;<span class="number">1</span>&lt;<span class="regexp">/div&gt;    </span></span><br><span class="line"><span class="regexp">	&lt;div class=“p2-2"&gt;1&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>6.题目描述：</strong>css作用域（选择器）权重（id&gt;class&gt;标签&gt;通配符）怎么计算</p>
+<p>​    <strong>提示：</strong>（按位统计，id,1;class,3;p,1=&gt; 1310）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>7.题目描述：</strong>条件选择器（否定选择器），有没有单独的权重？</p>
+<p>​    <strong>提示：</strong>（权重应该类似于伪类选择器）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>8.题目描述：</strong>权重相同的情况呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"red"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"green"</span>&gt;</span><br><span class="line">        &lt;p&gt;<span class="number">1.</span> 颜色是？&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">	&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="green"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="red"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;2. 颜色是？&lt;/</span>p&gt;</span><br><span class="line">	&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">.red p &#123; <span class="attr">color</span>: red; &#125;</span><br><span class="line">.green p &#123; <span class="attr">color</span>: green; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>9.题目描述：</strong>CSS的计数器</p>
+<p>​    <strong>提示：</strong>（<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Counters" target="_blank" rel="noopener">MDN</a>跟伪元素搭配使用，可以用于构造列表的自定义序号）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>10.题目描述：</strong>CSS三角形</p>
+<p>​    <strong>提示：</strong>（border，三边透明，用border宽与盒子的宽高比来控制三角形形状）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>11.题目描述：</strong>滚动动画怎么实现</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>监听滚轮位置，动画盒子与滚轮盒子相互配合，动画盒子固定定位展示动画，滚轮盒子撑起高度与滚动距离，将滚轮滚动距离配合动画长度，转成百分比控制进度</p>
+<p>半屏动画时，动画的下一块会被滚轮盒子挤开，需要加上fixed同时算入滚轮盒子的高度中</p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>12.题目描述：</strong>动画的资源很多，怎么页面性能优化</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>上传前压缩，非首屏内容懒加载</p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>13.题目描述：</strong>怎么懒加载？达到的效果？怎么看的加载时间？</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>src置空，添加data-src或者用image对象配合canvas画图</p>
+<p>加载时间减少2秒左右</p>
+<p>本地看，lighthouse</p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>14.题目描述：</strong>Lighthouse有哪些优化的建议</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>缩减JS的关键路径、白屏时间、首次渲染时间、CPU空闲时间，转换资源格式，区分首屏资源与非首屏资源</p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>15.题目描述：</strong>CSS动画与Canvas动画的区分，选择的原因（加载图片量的大小）</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>替换图片的src也可以实现，为什么要用canvas呢？（控制图片加载时间，可以不用等图片替换后再请求资源） </p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>16.题目描述：</strong>CSS有哪些伪类，实现选择偶数个对象元素的伪类是什么</p>
+<p>​    <strong>提示：</strong></p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>17.题目描述：</strong>Flex布局，排列方式？Flex整个宽度不够的话会做什么处理？</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>替换图片的src也可以实现，为什么要用canvas呢？（控制图片加载时间，可以不用等图片替换后再请求资源） </p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>18.题目描述：</strong>CSS动画与Canvas动画的区分，选择的原因（加载图片量的大小）</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>替换图片的src也可以实现，为什么要用canvas呢？（控制图片加载时间，可以不用等图片替换后再请求资源） </p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p><strong>1.题目描述：</strong>浏览器JS标签的加载顺序</p>
+<p>​    <strong>提示：</strong>（从上到下，阻塞DOM；另外还有defer和async模式）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">讲一下defer与<span class="keyword">async</span>（defer在页面加载完之后执行，<span class="keyword">async</span>获取js时不阻塞，获取完成之后立即执行并阻塞） </span><br><span class="line">分别用在哪种场景（defer用在需要操控DOM元素的，<span class="keyword">async</span>用于与DOM无关的）</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>2.题目描述：</strong>DOCTYPE，分类</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>3.题目描述：</strong>写一个表格</p>
+<p>​    <strong>提示：</strong></p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>4.题目描述：</strong>点击按钮，页面刷新展示的过程（分局部刷新和页面整体刷新）</p>
+<p>​    <strong>提示：</strong>（按视窗的百分比计算，1vw为窗口的1%，100vw撑满，<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank" rel="noopener">MDN</a>） </p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>5.题目描述：</strong>font-size ，line-height判断</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS */</span></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .p1 &#123;font-size: <span class="number">16</span>px; line-height: <span class="number">32</span>px;&#125;</span><br><span class="line">	.p1<span class="number">-1</span> &#123;font-size: <span class="number">2</span>em;&#125;</span><br><span class="line">	.p1<span class="number">-2</span> &#123;font-size: <span class="number">2</span>em; line-height: <span class="number">2</span>em;&#125;</span><br><span class="line">	.p2 &#123;font-size: <span class="number">16</span>px; line-height: <span class="number">2</span>;&#125;</span><br><span class="line">	.p2<span class="number">-1</span> &#123;font-size: <span class="number">2</span>em;&#125;</span><br><span class="line">	.p2<span class="number">-2</span> &#123;font-size: <span class="number">2</span>em; line-height: <span class="number">2</span>em;&#125;</span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="p1"&gt;    </span></span><br><span class="line"><span class="regexp">    &lt;div class=“p1-1"&gt;1&lt;/</span>div&gt;    </span><br><span class="line">	&lt;div <span class="class"><span class="keyword">class</span></span>=“p1<span class="number">-2</span><span class="string">"&gt;1&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;div class="</span>p2<span class="string">"&gt;    </span></span><br><span class="line"><span class="string">    &lt;div class=“p2-1"</span>&gt;<span class="number">1</span>&lt;<span class="regexp">/div&gt;    </span></span><br><span class="line"><span class="regexp">	&lt;div class=“p2-2"&gt;1&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>6.题目描述：</strong>css作用域（选择器）权重（id&gt;class&gt;标签&gt;通配符）怎么计算</p>
+<p>​    <strong>提示：</strong>（按位统计，id,1;class,3;p,1=&gt; 1310）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>7.题目描述：</strong>条件选择器（否定选择器），有没有单独的权重？</p>
+<p>​    <strong>提示：</strong>（权重应该类似于伪类选择器）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>8.题目描述：</strong>权重相同的情况呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"red"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"green"</span>&gt;</span><br><span class="line">        &lt;p&gt;<span class="number">1.</span> 颜色是？&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">	&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="green"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="red"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;2. 颜色是？&lt;/</span>p&gt;</span><br><span class="line">	&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">.red p &#123; <span class="attr">color</span>: red; &#125;</span><br><span class="line">.green p &#123; <span class="attr">color</span>: green; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>9.题目描述：</strong>CSS z-index还会有什么属性影响（position不为static）</p>
+<p>​    <strong>提示：</strong>如果postion都是relative；display：inline，block，float对z-index的影响</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><strong>1.题目描述：</strong>浏览器在跨域(CORS)时会进行检查（检查响应头的origin，不匹配就拒绝掉）</p>
+<p>​    <strong>提示：</strong>（从上到下，阻塞DOM；另外还有defer和async模式）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">什么时候发起预检（Option）请求（非简单请求：方式：非<span class="keyword">get</span>、post||类型：JSON格式||有自定义请求头） </span><br><span class="line">前后端跨域的cookie怎么传递（设置withCredentials，传递的是后端对应的cookie）</span><br></pre></td></tr></table></figure>
+
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>2.题目描述：</strong>页面监控，捕获报错（try…catch）（window.onError）</p>
+<p>​    <strong>提示：</strong></p>
+<blockquote>
+<p>监听DOM元素的改变的接口，节点变化的检测（不记得了，直接说不清楚）    （<a href="https://www.jianshu.com/p/b5c9e4c7b1e1" target="_blank" rel="noopener">MutationObserver</a>、脏值检测、数据劫持） </p>
+</blockquote>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>3.题目描述：</strong>JS隐式转换规则：null与undefined转换成数字</p>
+<p>​    <strong>提示：</strong>（转成0吧，然而不对）（null=&gt;0，undefined=&gt;NaN）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>4.题目描述：</strong>浮点数的精度问题（二进制转换精度丢失）</p>
+<p>​    <strong>提示：</strong>怎么解决？（转换成整数计算再转换回去） </p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>5.题目描述：</strong>JS的深拷贝</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>6.题目描述：</strong>JS的设计模式</p>
+<p>​    <strong>提示：</strong>（说了单例模式和工厂模式）</p>
+<p>​    <strong>题目答案：</strong></p>
+<p>​    <strong>题目解析</strong></p>
+<p><strong>7.题目描述：</strong>适配器模式</p>
+<p>​    <strong>提示：</strong></p>
+<p>​    <strong>题目答案：</strong>BCD</p>
+<p>​    <strong>题目解析</strong></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/">前端三剑客面试题</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhanzhan</a></p>
+        <p><span>发布时间:</span>2020-04-04, 11:37:32</p>
+        <p><span>最后更新:</span>2020-04-04, 13:50:37</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/" title="前端三剑客面试题">https://guoxiangguoxiang.github.io/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://guoxiangguoxiang.github.io/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/　　作者: zhanzhan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/04/04/%E7%BC%96%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                    编程面试题
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/04/04/%E6%A1%86%E6%9E%B6%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                    框架面试题
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-number">1.</span> <span class="toc-text">CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-number">2.</span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript"><span class="toc-number">3.</span> <span class="toc-text">JavaScript</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"前端三剑客面试题　| zhanzhan's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2020/04/04/%E7%BC%96%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/" title="上一篇: 编程面试题">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/04/04/%E6%A1%86%E6%9E%B6%E9%9D%A2%E8%AF%95%E9%A2%98/" title="下一篇: 框架面试题">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E7%BC%96%E7%A8%8B%E9%9D%A2%E8%AF%95%E9%A2%98/">编程面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%89%91%E5%AE%A2%E9%9D%A2%E8%AF%95%E9%A2%98/">前端三剑客面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E6%A1%86%E6%9E%B6%E9%9D%A2%E8%AF%95%E9%A2%98/">框架面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E8%AF%95%E9%A2%98/">操作系统面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E9%A2%98/">计算机网络面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%9D%A2%E8%AF%95%E9%A2%98/">前端性能优化面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/ES6%E9%9D%A2%E8%AF%95%E9%A2%98/">ES6面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/">计算机网络笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/01/%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/">项目整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/01/ES6%E7%BB%8F%E5%85%B8%E9%A2%98-%E7%96%91%E9%9A%BE%E9%A2%98/">ES6经典题&疑难题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/31/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89/">ES6笔记（十三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/31/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">ES6笔记（十二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/31/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">ES6笔记（十一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/30/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%EF%BC%89/">ES6笔记（十）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/29/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B9%9D%EF%BC%89/">ES6笔记（九）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/29/%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F%EF%BC%88%E4%BA%8C%EF%BC%89/">前端面经（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/29/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">前端性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/26/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AB%EF%BC%89/">ES6笔记（八）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/25/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/">ES6笔记（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/25/%E5%85%B3%E4%BA%8Ehttp%E5%8D%8F%E8%AE%AE%E5%8D%9A%E5%AE%A2%E6%91%98%E6%8A%84/">关于http协议博客摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/24/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/">ES6笔记（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/23/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/">ES6笔记（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/22/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/">ES6笔记（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/22/OPPO%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F/">前端面经（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/21/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">ES6笔记（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/20/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">ES6笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/20/ES6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">ES6笔记（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/aliTest/">阿里云达摩院实习笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/13/zhanzhan-planning/">奥特曼打小怪兽</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2020 zhanzhan
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script type="text/javascript" src="/js/clicklove.js"></script>
+  </div>
+</body>
+</html>
