@@ -7,9 +7,13 @@
 </head>
   <body>
     <div id="content"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 <script>
-    $.get('./README.md', function(response, status, xhr){
-        $("#content").html(marked(response));
+  const converter = new showdown.Converter();
+  fetch('./README.md')
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById('content').innerHTML = converter.makeHtml(text);
     });
 </script>
   </body>
