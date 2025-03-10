@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <link rel="stylesheet" href="./resume.css">
     <style>
     	.markdown-body {
@@ -24,14 +26,21 @@
       <article class="markdown-body">
           <div id="content"></div>
       </article>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-<script>
-  const converter = new showdown.Converter();
-  fetch('./README.md')
-    .then(response => response.text())
-    .then(text => {
-      document.getElementById('content').innerHTML = converter.makeHtml(text);
-    });
-</script>
+    <script>
+        marked.setOptions({
+          highlight: function(code, lang) {
+            return hljs.highlightAuto(code).value;
+          },
+          breaks: true  // 换行符转换为<br>
+        });
+    
+        // 加载并渲染Markdown文件
+        fetch('your-file.md')  // 修改为你的Markdown文件路径
+          .then(response => response.text())
+          .then(text => {
+            document.getElementById('content').innerHTML = marked.parse(text);
+          })
+          .catch(err => console.error('加载Markdown失败:', err));
+      </script>
   </body>
 </html>
