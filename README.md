@@ -45,7 +45,7 @@
 
 <div style="display: flex; justify-content: space-between;">
   <div style="font-size: 18px;"><strong>酷家乐（2021 年 09 月 ~ 2025 年 01 月共计3年3个月 ）</strong></div>
-  <div style="font-size: 18px;">软件高级开发工程师</div>
+  <div style="font-size: 18px;">前端开发高级开发工程师</div>
 </div>
 
 1. 负责棚拍影棚页、影棚详情页、镜头设置工具页和管理后台业务的功能迭代与稳定性建设。
@@ -58,7 +58,7 @@
 
 <div style="display: flex; justify-content: space-between; margin: 12px 0 0 0">
   <div style="font-size: 18px;"><strong>办公易用性技术提升项目（2022 年 07 月 - 2025 年 01 月）</strong></div>
-  <div style="font-size: 18px;">软件高级开发工程师</div>
+  <div style="font-size: 18px;">前端开发高级开发工程师</div>
 </div>
 
 #### 项目描述
@@ -129,7 +129,7 @@
 
 <div style="display: flex; justify-content: space-between; margin: 12px 0 0 0">
   <div style="font-size: 18px;"><strong>办公重点客户冲刺计划（2023 年 01 月 - 2023 年 08 月）</strong></div>
-  <div style="font-size: 18px;">软件高级开发工程师</div>
+  <div style="font-size: 18px;">前端开发高级工程师</div>
 </div>
 
 #### 项目描述
@@ -180,7 +180,7 @@
 
 <div style="display: flex; justify-content: space-between; margin: 12px 0 0 0">
   <div style="font-size: 18px;"><strong>办公稳定性保障项目（2023 年 10 月 - 2024 年 06 月）</strong></div>
-  <div style="font-size: 18px;">软件高级开发工程师</div>
+  <div style="font-size: 18px;">前端开发高级工程师</div>
 </div>
 
 #### 项目描述
@@ -202,7 +202,7 @@
 
 <div style="display: flex; justify-content: space-between; margin: 12px 0 0 0">
   <div style="font-size: 18px;"><strong>棚拍（2021 年 09 月 - 2022 年 06 月 ）</strong></div>
-  <div style="font-size: 18px;">软件开发培训生</div>
+  <div style="font-size: 18px;">前端开发培训生</div>
 </div>
 
 #### 项目描述
