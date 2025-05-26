@@ -1,6 +1,6 @@
 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
   <div style="font-size: 22px; margin: 10px 0px"><strong>詹晓秋</strong></div>
-  <div style="font-size: 16px;">📱15306598108 | 📧 289463414@qq.com</div>
+  <div style="font-size: 16px; margin: 2px 0px 27px 0">📱15306598108 | 📧 289463414@qq.com</div>
 </div>
 
 ### 教育经历
