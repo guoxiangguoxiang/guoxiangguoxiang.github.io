@@ -1,118 +1,117 @@
 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-  <div style="font-size: 22px; margin: 10px 0px"><strong>詹晓秋</strong></div>
+  <div style="font-size: 22px; margin: 10px 0px"><strong>Zhan Xiaoqiu</strong></div>
   <div style="font-size: 16px; margin: 2px 0px 27px 0">📱15306598108 | 📧 289463414@qq.com</div>
 </div>
 
-### 教育经历
+### Education
 
-#### 浙江大学 | 机械制造及自动化 | 硕士 | 2018.09 - 2021.03
+#### Zhejiang University - M.Eng., Mechanical Manufacturing and Automation | 2018.09 - 2021.03
 
 - GPA：3.38/4.00
-- 荣誉/奖项：校一等奖学金
+- First-Class Scholarship
 
-#### 中国计量大学 | 工业工程 | 本科 | 2013.09 - 2017.06
+#### China Jiliang University — B.Eng., Industrial Engineering | 2013.09 - 2017.06
 
-- 荣誉/奖项：院二等奖学金(2013-2016)
-- 国际大学生数学建模竞赛二等奖(2016)
-- 全国大学生数学建模竞赛省三等奖(2015)
-- 英语（CET-6）
+- Second-Class Scholarship (2013–2016)
+- International Mathematical Contest in Modeling, Second Prize (2016)
+- National College Mathematical Modeling Contest, Provincial Third Prize (2015)
+- English: CET-6
 
-### 技术能力
+### Technical Skills
 
-- **语言**：JavaScript/TypeScript/CSS/HTML
-- **框架工具** ：React/Redux/Webpack
+- **Programming Language**：JavaScript/TypeScript/CSS/HTML
+- **Frameworks/Tools** ：React/Redux/Webpack
 
-### 工作经历
+### Work Experience
 
-#### 群核科技（酷家乐）| 杭州六小龙 | 软件高级开发工程师 | 2021 - 2025（3年）
+#### Kujiale (Coohom) — Senior Frontend Engineer | 2021 – 2025 (3 yrs) | Hangzhou
 
-**核心职责**
+- Led frontend architecture and complex problem solving for the office furniture business; solved core pain points via systematic design
+- Owned feature iteration and stability for the Photo Studio Platform (studio pages/admin console)
 
-- 负责办公家具业务的前端架构和技术攻坚，通过系统化设计解决业务痛点
-- 负责棚拍平台（影棚页/管理后台）功能迭代与稳定性建设
+### Projects
 
-### 项目经历
+#### 1 Office Usability Technical Uplift | 2024.05 – 2024.12 | Owner (P0) | Expected revenue: ¥12.16M+
 
-#### 1 办公易用性技术提升项目 | 2024.05 - 2024.12 | 主负责（P0级）| 预期收入1216万+
+#### Business impact:
 
-#### 项目价值
+- Broke functional barriers vs. CET software; enabled 8-figure renewals with AURORA and SUNON
+- Cut solution design time by 50%; raised success rate for complex scenarios to 95%+; halved implementation cycle
 
-- 突破CET软件功能壁垒，促成震旦/圣奥千万级续约
-- 方案设计时长缩短50%，复杂场景操作成功率提升至95%以上，实施设计周期缩短50%
+#### Key contributions
 
-#### 主要技术成果
+**1.1 Feature Parity with Competitors & Enhanced Extensibility for Office Workflows
+Challenges**
 
-**1.1 补全竞品功能&提升办公业务功能扩展**
+**Challenges**
 
-**业务难点**
+- Third-party business logic lacks clear separation of concerns, blurring modular boundaries and making third-party capability extensions difficult.
+- Absence of a unified abstraction layer for operation logic leads to tight coupling between business logic and specific type implementations, causing significant code duplication.
 
-- 第三方业务缺乏清晰的关注点隔离，导致模块间认知边界模糊，第三方能力扩展困难
-- 缺乏对操作逻辑的统一抽象层，导致业务逻辑与具体类型实现强耦合，产生大量重复代码
+**Technical Solution & Outcomes**
 
-**技术方案与成果**
+##### 1.1.1 Dynamic Layered Architecture Based on the Onion Model
 
-##### 1.1.1 基于洋葱模型的动态分层架构
+- Designed an onion-model middleware mechanism to enable bidirectional processing and improve extensibility.
+- Implemented dynamic initialization and on-demand creation via the Proxy pattern to reduce memory footprint and lower the barrier for third-party integration.
+- Built end-to-end tracing to enhance framework stability and expedite issue diagnosis.
 
-- 设计基于洋葱模型的中间件机制，实现双向处理能力，提升可扩展性能力
-- 通过代理模式实现动态初始化和按需创建，减少内存开销，降低第三方接入难度
-- 设计全链路追踪能力，提升框架稳定性，提高问题排查效率
+**Tech Stack**：Onion model / Proxy pattern / React / Redux
 
-**技术范围**：洋葱模型/代理模式/React/Redux
+**1.2 Office System Stability Enhancement**
 
-**1.2 办公系统稳定性提升**
+**Challenges**
 
-**业务难点**
+- Office workflows heavily depend on complex lifecycle management, with extensive business logic embedded in each lifecycle stage, creating significant stability risks.
 
-- 办公业务强依赖多个复杂的生命周期管理，不同生命周期阶段具有庞大的业务逻辑侵入，稳定性挑战大
+**Technical Solution & Outcomes**
 
-**技术方案与成果**
+##### 1.2.1 Lifecycle-Based Event-Driven Architecture
 
-##### 1.2.1 基于生命周期的事件驱动架构
+- Converted lifecycle stages into events and introduced function-signature-driven hook registration to standardize partner integrations, implementing a publish-subscribe model.
+- Built a task scheduling container with asynchronous concurrency control, timeout retries, and unified error handling as defensive measures to maintain scheduling consistency.
 
-- 通过生命周期事件化+按功能注册钩子的形式，依据函数签名规范业务方的接入，实现[发布-订阅]模型
-- 设计任务调度容器，支持异步并发控制，以超时重试和统一错误处理作为防御机制，保证任务调度一致性
+**Tech Stack**：Publish-Subscribe / Async Concurrency Control
 
-**技术范围**：发布-订阅/异步并发控制
+#### 2 Office Key Account Sprint | 2022.12 – 2023.08 | Lead Developer (P0) | Coordinated 7 Agile Squads
 
-#### 2 办公重点客户冲刺计划 | 2022.12 - 2023.08 | 主开发 （P0级）| 跨7敏捷组协同
+#### Business Impact
 
-#### 项目价值
+- Closed a ¥2M+ contract with Belle Home; weekly active users of the ordering feature rose from 200 to 8,000.
+- Cracked large-plan (2,000㎡) design bottlenecks, cutting detection time from 45s to 12s.
+- Kept scene interactions available during assembly checks, preserving a smooth user experience.
 
-- 获百丽家居200万+合同，下单功能周活跃人次从200提升至8000
-- 突破2000㎡大型方案设计瓶颈，检测时长从45s缩短至12s
-- 装配检测期间用户可进行场景交互，保证了操作流畅性
+#### Key Technical Outcome – Generalized Assembly Inspection Engine
 
-#### 主要技术成果-装配检测引擎通用性设计
+**Challenges**
 
-**业务难点**
+- User mis-operations were not captured, leading to downstream data errors and financial risk.
+- Detection on 2,000㎡ plans took up to 45 seconds, causing the interface to appear frozen and degrading user experience.
 
-- 用户误操作行为未被成功捕捉，导致后续数据错误，容易产生资损
-- 2000平大型方案下检测耗时长达45s，用户感知界面”卡死“，体验感差
+**Technical Solution & Outcomes**
 
-**技术方案与成果**
+##### 1.1 Assembly Inspection Engine
 
-##### 1.1 装配检测引擎
+- Combined Strategy, Builder, and Factory patterns to construct a three-layer inspection pipeline (preprocessing / detection / merge) that supports dynamic logic swaps.
+- Used the Strategy pattern to encapsulate variable algorithms, the Factory pattern to create standardized components, and the Builder pattern to orchestrate the pipeline.
 
-- 结合策略模式+建造者模式+工厂模式，实现三层检测架构（预处理/检测/合并），支持逻辑动态替换
-- 策略模式封装可变算法，工厂模式生产标准化组件，建造者模式流水线整合逻辑
+##### 1.2 Incremental Detection Strategy
 
-##### 1.2 增量检测策略
-
-- 结合装饰器和代理模式跟踪模型属性变更，收集脏模型集合作为检测目标
-- 结合时间分片+超时熔断机制调度检测任务，避免主线程阻塞
+- Leveraged Decorator and Proxy patterns to track model property changes and aggregate a dirty set as detection targets.
+- Applied time slicing with timeout circuit breakers to schedule detection tasks and prevent main-thread blocking.
   
-**技术范围**：策略模式/工厂模式/建造者模式/装饰器/时间分片/Redux
+**Tech Stack**：Strategy / Factory / Builder / Decorator / Time Slicing / Redux
 
-#### 3 棚拍平台开发 | 2021.09 - 2022.06 | 千万级营收项目
+#### 3 Photo Studio Platform Development | 2021.09 – 2022.06 | 8-figure Revenue Project
 
-#### 工作内容/个人职责
+#### Responsibilities
 
-- 左侧素材栏改版
-- 主页面（选择影棚页、影棚详情页、镜头设置工具页改版），负责管理后台系统开发
+- Revamped the left-hand asset panel
+- Led redesigns for the main pages (studio selection, studio details, lens configuration) and built the admin console
 
-#### 主要技术成果
+#### Key Technical Outcomes
 
-- 基于Redux状态切片管理，实现功能维度状态隔离
-- 基于滚动驱动的分级加载策略，双缓冲策略实现可视区域快速加载，缓冲区提前加载
+- Adopted Redux slice-based state management to isolate state by feature
+- Implemented scroll-driven tiered loading with double buffering for rapid viewport loading and proactive prefetching
 
-**技术范围**：React/React-Redux
+**Tech Stack**：React/React-Redux
