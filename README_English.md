@@ -40,8 +40,7 @@
 
 #### Key contributions
 
-**1.1 Feature Parity with Competitors & Enhanced Extensibility for Office Workflows
-Challenges**
+**1.1 Feature Parity with Competitors & Enhanced Extensibility for Office Workflows**
 
 **Challenges**
 
