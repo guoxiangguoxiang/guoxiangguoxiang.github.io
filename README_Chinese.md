@@ -19,7 +19,7 @@
 
 ### 技术能力
 
-- **语言**：JavaScript/TypeScript/CSS/HTML
+- **语言**：JavaScript/TypeScript/CSS/HTML/node.js
 - **框架工具** ：React/Redux/Webpack/微前端/SSR
 
 ### 工作经历
