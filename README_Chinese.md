@@ -20,7 +20,7 @@
 ### 技术能力
 
 - **语言**：JavaScript/TypeScript/CSS/HTML/Node.js
-- **框架工具**：React/Redux/Webpack/微前端
+- **框架工具**：React/Redux/Webpack/SSR/微前端
 - **业务技能**：AI MCP/前端工程化/微应用/设计模式
 
 ### 工作经历
@@ -122,4 +122,4 @@
 - 基于Redux状态切片管理，实现功能维度状态隔离
 - 基于滚动驱动的分级加载策略，双缓冲策略实现可视区域快速加载，缓冲区提前加载
 
-**技术关键词**：React/React-Redux
+**技术关键词**：React/React-Redux/SSR
